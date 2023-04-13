@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
    # POST /login
-  def create
-    user = User.find_by(name: params[:username_or_email]) || User.find_by(email: params[:username_or_email])
+   def create
+    user = User.find_by(username: params[:username]) || User.find_by(email: params[:username])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       render json: user, status: :created
@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       render json: { error: 'user not found' }, status: :not_found
     end
   end
+  
 
    # DELETE /logout
   def destroy

@@ -1,5 +1,1 @@
-"Fix login authentication for users"
-"Handle duplicate username error when signing up users"
-"Implement admin login authentication"
-"Handle duplicate username error when signing up admins"
-"Refactor login authentication code for users and admins"
+Add authorized method to ApplicationController
