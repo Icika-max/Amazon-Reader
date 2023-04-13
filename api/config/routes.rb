@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   post '/admin/signup', to: 'admins#create'
 
  
+  
+
+  
+  resources :carts, only: [:index, :create, :update, :destroy]
 end
