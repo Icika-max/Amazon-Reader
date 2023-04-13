@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :lendings
+  resources :orders
+  resources :users
 
-  resources :books
+  #books
+  resources :books, only: [:show, :create, :update, :destroy]
+  get '/store', to: 'books#store'
+  get '/library', to: 'books#library'
 
   
+  #carts
   resources :carts, only: [:index, :create, :update, :destroy]
 end

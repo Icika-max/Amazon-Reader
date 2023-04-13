@@ -3,17 +3,17 @@
 one:
   title: MyString
   author: MyString
-  description: MyString
-  genre: MyString
-  image_url: MyString
+  description: MyText
   rating: 1
-  price: 1
+  genre: MyString
+  price: 9.99
+  image_url: MyString
 
 two:
   title: MyString
   author: MyString
-  description: MyString
-  genre: MyString
-  image_url: MyString
+  description: MyText
   rating: 1
-  price: 1
+  genre: MyString
+  price: 9.99
+  image_url: MyString
