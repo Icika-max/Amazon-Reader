@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 
-  before_action :unauthorized
+  before_action :authorized
 
   # Register a new admin
   def register
