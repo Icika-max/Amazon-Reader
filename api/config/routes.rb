@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
 
   resources :admins
 
-=======
   resources :returns
   resources :payments
->>>>>>> c10939bfbb9c9bccd263fd28e6d9cef5814bc56d
   resources :lendings
   resources :orders
   resources :users
