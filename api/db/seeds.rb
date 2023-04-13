@@ -46,4 +46,36 @@ Lending.create(user: user3, book: book3, due_date: Date.today + 10.days, status:
 Lending.create(user: user3, book: book4, due_date: Date.today + 7.days, status: "approved")
 Lending.create(user: user5, book: book5, due_date: Date.today + 7.days, status: "rejected")
 
-  
+
+
+
+Order.create(user: user1, book: book1, status: "approved")
+Order.create(user: user2, book: book2, status: "pending")
+Order.create(user: user3, book: book3, status: "rejected")
+Order.create(user: user4, book: book4, status: "approved")
+Order.create(user: user5, book: book5, status: "pending")
+
+Payment.create([
+  { amount: 50.0, status: 'paid', user_id: 1, order_id: 1 },
+  { amount: 20.0, status: 'paid', user_id: 2, order_id: 2 },
+  { amount: 15.0, status: 'pending', user_id: 3, order_id: 3 },
+  { amount: 40.0, status: 'paid', user_id: 4, order_id: 4 }
+])
+
+# create payment
+# Payment.create!(order: order1, amount: 100.00, payment_date: Date.today, payment_status: "paid")
+# Payment.create!(order: order2, amount: 50.00, payment_date: Date.today, payment_status: "paid")
+# Payment.create!(order: order3, amount: 75.00, payment_date: Date.yesterday, payment_status: "unpaid")
+# Payment.create!(order: order4, amount: 200.00, payment_date: Date.today, payment_status: "unpaid")
+
+
+
+# Payment.create!(order_id: 1, user_id: 1, amount: 100.00, payment_date: Date.today, payment_status: "paid")
+# Payment.create!(order_id: 2, user_id: 2, amount: 50.00, payment_date: Date.today, payment_status: "paid")
+# Payment.create!(order_id: 3, user_id: 3, amount: 75.00, payment_date: Date.yesterday, payment_status: "unpaid")
+# Payment.create!(order_id: 4, user_id: 4, amount: 200.00, payment_date: Date.today, payment_status: "unpaid")
+# Payment.create([{ amount: 50.0, status: 'paid', user_id: 1, order_id: 1 },{ amount: 20.0, status: 'paid', user_id: 2, order_id: 2 },{ amount: 15.0, status: 'pending', user_id: 3, order_id: 3 },{ amount: 40.0, status: 'paid', user_id: 4, order_id: 4 }])
+
+Return.create!(lending_id: 3,return_date: Date.today,status: :returned,user_id: 2)
+Return.create!(lending_id: 4,return_date: Date.today,status: :not_returned,user_id: 1)
+Return.create!(lending_id: 5,return_date: Date.today,status: :returned,user_id: 3)
