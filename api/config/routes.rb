@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   resources :admins
 
+=======
+  resources :returns
+  resources :payments
+>>>>>>> c10939bfbb9c9bccd263fd28e6d9cef5814bc56d
   resources :lendings
   resources :orders
   resources :users
   resources :books
   resources :payments, only: [:index, :new, :create, :show, :edit, :update, :destroy]
-  resources :returns, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
