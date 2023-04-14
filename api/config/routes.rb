@@ -19,19 +19,21 @@ Rails.application.routes.draw do
 
 
    #sessions
-   post '/users', to: 'users#create'
    post '/login', to: 'sessions#create'
    delete '/logout', to: 'sessions#destroy'
+  #users
+   put '/reset-password/:username', to: 'users#reset_password'
+   get '/me', to: 'users#show'
+   post '/users', to: 'users#create'
+ 
 
    #admin_sessions
    post 'admin/login', to: 'admin_sessions#create'
   delete 'admin/logout', to: 'admin_sessions#destroy'
   post '/admin/signup', to: 'admins#register'
-
+  
  
-  
-
-  
   #carts
   resources :carts, only: [:index, :create, :update, :destroy]
+  
 end

@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 #Create admins
 admin = Admin.create(username: 'Dorothy', email: 'dorothy@example.com', password_digest: 'password')
 
@@ -50,7 +51,6 @@ Lending.create(user: user3, book: book3, due_date: Date.today + 10.days, status:
 Lending.create(user: user3, book: book4, due_date: Date.today + 7.days, status: "approved")
 Lending.create(user: user5, book: book5, due_date: Date.today + 7.days, status: "rejected")
 
-<<<<<<< HEAD
 
 
 
@@ -84,8 +84,7 @@ Payment.create([
 Return.create!(lending_id: 3,return_date: Date.today,status: :returned,user_id: 2)
 Return.create!(lending_id: 4,return_date: Date.today,status: :not_returned,user_id: 1)
 Return.create!(lending_id: 5,return_date: Date.today,status: :returned,user_id: 3)
-=======
+
 #create cart
 Cart.create(quantity: 2, price: 9.99, book_id: 1, user_id: 1)
 Cart.create(quantity: 1, price: 0, book_id: 2, user_id: 2)
->>>>>>> 9bb10686b3331fbe0457ef32f30d591ce46c2844

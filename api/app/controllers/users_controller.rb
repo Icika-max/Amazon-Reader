@@ -7,6 +7,21 @@ class UsersController < ApplicationController
     render json: user, status: :created
   end
 
+  def show
+    user = User.find(session[:user_id])
+    render json: user, status: 200
+  end
+
+
+  def reset_password
+    user = User.find_by(username: params[:username])
+    if user.nil?
+      render json: { error: 'User not found' }, status: :not_found
+    else
+      user.update!(params.permit(:password))
+      render json: user, status: :created
+    end
+  end
   # GET /users
   def index
     @users = User.all
