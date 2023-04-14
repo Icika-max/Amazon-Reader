@@ -7,9 +7,13 @@ Rails.application.routes.draw do
   resources :lendings
   resources :orders
   resources :users
-  resources :books
   resources :payments, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
+
+  #books
+  resources :books, only: [:show, :create, :update, :destroy]
+  get '/store', to: 'books#store'
+  get '/library', to: 'books#library'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -28,5 +32,6 @@ Rails.application.routes.draw do
   
 
   
+  #carts
   resources :carts, only: [:index, :create, :update, :destroy]
 end

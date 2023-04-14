@@ -1,12 +1,28 @@
 class BooksController < ApplicationController
+<<<<<<< HEAD
   before_action :authorized, only: [:show]
 
+=======
+  before_action :set_book, only: %i[ show update destroy ]
+>>>>>>> 9bb10686b3331fbe0457ef32f30d591ce46c2844
 
   # GET /books
   def index
     @books = Book.all
 
     render json: @books
+  end
+
+  # GET all books in store
+  def store
+    @store_books = Book.where(location: 'store')
+    render json: @store_books
+  end
+
+  # GET all books in library
+  def library
+    @library_books = Book.where(location: 'library')
+    render json: @library_books
   end
 
   # GET /books/1
@@ -51,6 +67,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :author, :description, :rating, :genre, :price, :image_url)
+      params.require(:book).permit(:title, :author, :description, :rating, :genre, :price, :image_url, :location)
     end
 end

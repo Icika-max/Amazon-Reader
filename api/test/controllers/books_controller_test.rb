@@ -35,7 +35,10 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :no_content
   end
+<<<<<<< HEAD
   # test "the truth" do
   #   assert true
   # end
+=======
+>>>>>>> 9bb10686b3331fbe0457ef32f30d591ce46c2844
 end
