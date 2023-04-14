@@ -4,4 +4,6 @@ class Book < ApplicationRecord
     has_many :lendings
     has_many :users, through: :lendings
 
+    
+
 end

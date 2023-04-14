@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :admins
+
   resources :returns
   resources :payments
   resources :lendings
@@ -10,7 +13,20 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+
+   #sessions
+   post '/users', to: 'users#create'
+   post '/login', to: 'sessions#create'
+   delete '/logout', to: 'sessions#destroy'
+
+   #admin_sessions
+   post 'admin/login', to: 'admin_sessions#create'
+  delete 'admin/logout', to: 'admin_sessions#destroy'
+  post '/admin/signup', to: 'admins#register'
+
+ 
   
+
+  
+  resources :carts, only: [:index, :create, :update, :destroy]
 end

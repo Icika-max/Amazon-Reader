@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show update destroy ]
+  before_action :authorized, only: [:show]
+
 
   # GET /books
   def index
@@ -35,8 +36,12 @@ class BooksController < ApplicationController
 
   # DELETE /books/1
   def destroy
+    @book = Book.find(params[:id])
     @book.destroy
+    head :no_content
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

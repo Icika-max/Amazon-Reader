@@ -8,6 +8,11 @@ one:
   genre: MyString
   price: 9.99
   image_url: MyString
+  description: MyString
+  genre: MyString
+  image_url: MyString
+  rating: 1
+  price: 1
 
 two:
   title: MyString
@@ -17,3 +22,8 @@ two:
   genre: MyString
   price: 9.99
   image_url: MyString
+  description: MyString
+  genre: MyString
+  image_url: MyString
+  rating: 1
+  price: 1
