@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
 
   #books
-  resources :books, only: [:show, :create, :update, :destroy]
+  resources :books, only: [:index, :show, :create, :update, :destroy]
   get '/store', to: 'books#store'
   get '/library', to: 'books#library'
 
