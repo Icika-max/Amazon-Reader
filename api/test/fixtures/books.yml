@@ -5,31 +5,25 @@ one:
   author: MyString
   description: MyText
   rating: 1
+
   genre: MyString
   price: 9.99
   image_url: MyString
-<<<<<<< HEAD
   description: MyString
   genre: MyString
+  price: 9.99
   image_url: MyString
-  rating: 1
-  price: 1
-=======
->>>>>>> 9bb10686b3331fbe0457ef32f30d591ce46c2844
 
 two:
   title: MyString
   author: MyString
   description: MyText
   rating: 1
+
   genre: MyString
   price: 9.99
   image_url: MyString
-<<<<<<< HEAD
   description: MyString
   genre: MyString
+  price: 9.99
   image_url: MyString
-  rating: 1
-  price: 1
-=======
->>>>>>> 9bb10686b3331fbe0457ef32f30d591ce46c2844
