@@ -1,5 +1,8 @@
 class BooksController < ApplicationController
+
+  before_action :set_book, only: %i[ show update destroy ]
   before_action :authorized, only: [:show]
+
 
 
   # GET /books
@@ -8,6 +11,20 @@ class BooksController < ApplicationController
 
     render json: @books
   end
+
+
+  # GET all books in store
+  def store
+    @store_books = Book.where(location: 'store')
+    render json: @store_books
+  end
+
+  # GET all books in library
+  def library
+    @library_books = Book.where(location: 'library')
+    render json: @library_books
+  end
+
 
   # GET /books/1
   def show
@@ -40,8 +57,6 @@ class BooksController < ApplicationController
     @book.destroy
     head :no_content
   end
-  
-  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -51,6 +66,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :author, :description, :rating, :genre, :price, :image_url)
+      params.require(:book).permit(:title, :author, :description, :rating, :genre, :price, :image_url, :location)
     end
 end

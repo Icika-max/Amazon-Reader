@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  resources :lendings
+  resources :orders
+  resources :users
+
+  #books
+  resources :books, only: [:index, :show, :create, :update, :destroy]
+  get '/store', to: 'books#store'
+  get '/library', to: 'books#library'
+
   resources :admins
 
   resources :returns
@@ -25,8 +34,9 @@ Rails.application.routes.draw do
   post '/admin/signup', to: 'admins#register'
 
  
-  
+ 
 
   
+  #carts
   resources :carts, only: [:index, :create, :update, :destroy]
 end
