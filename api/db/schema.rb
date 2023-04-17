@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.0].define(version: 2023_04_13_140947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_140947) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -32,7 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_140947) do
     t.string "genre"
     t.decimal "price"
     t.string "image_url"
-
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,9 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_140947) do
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_carts_on_book_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
-
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "lendings", force: :cascade do |t|
@@ -105,12 +99,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_140947) do
 
   add_foreign_key "carts", "books"
   add_foreign_key "carts", "users"
-
   add_foreign_key "lendings", "books"
   add_foreign_key "lendings", "users"
   add_foreign_key "orders", "books"
   add_foreign_key "orders", "users"
-
   add_foreign_key "payments", "orders"
   add_foreign_key "payments", "users"
   add_foreign_key "returns", "lendings"
