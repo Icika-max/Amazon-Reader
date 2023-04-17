@@ -181,7 +181,8 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   tzinfo-data
 
-
+RUBY VERSION
+   ruby 3.1.3p185
 
 BUNDLED WITH
    2.4.10
