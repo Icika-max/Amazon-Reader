@@ -6,4 +6,11 @@ class User < ApplicationRecord
     has_many :carts
     has_many :books, through: :carts
 
+
+    has_secure_password
+
+     validates :username, uniqueness: true
+      
+    
+
 end

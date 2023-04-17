@@ -1,5 +1,9 @@
 class BooksController < ApplicationController
+
   before_action :set_book, only: %i[ show update destroy ]
+  before_action :authorized, only: [:show]
+
+
 
   # GET /books
   def index
@@ -7,6 +11,7 @@ class BooksController < ApplicationController
 
     render json: @books
   end
+
 
   # GET all books in store
   def store
@@ -19,6 +24,7 @@ class BooksController < ApplicationController
     @library_books = Book.where(location: 'library')
     render json: @library_books
   end
+
 
   # GET /books/1
   def show
@@ -47,7 +53,9 @@ class BooksController < ApplicationController
 
   # DELETE /books/1
   def destroy
+    @book = Book.find(params[:id])
     @book.destroy
+    head :no_content
   end
 
   private

@@ -5,6 +5,11 @@ one:
   author: MyString
   description: MyText
   rating: 1
+
+  genre: MyString
+  price: 9.99
+  image_url: MyString
+  description: MyString
   genre: MyString
   price: 9.99
   image_url: MyString
@@ -14,6 +19,11 @@ two:
   author: MyString
   description: MyText
   rating: 1
+
+  genre: MyString
+  price: 9.99
+  image_url: MyString
+  description: MyString
   genre: MyString
   price: 9.99
   image_url: MyString

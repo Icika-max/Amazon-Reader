@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_13_092942) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_04_13_140947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "username", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -22,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_092942) do
     t.string "genre"
     t.decimal "price"
     t.string "image_url"
+
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,6 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_092942) do
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_carts_on_book_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
+
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lendings", force: :cascade do |t|
@@ -59,6 +73,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_092942) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.float "amount"
+    t.string "status"
+    t.bigint "user_id", null: false
+    t.bigint "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_payments_on_order_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
+  create_table "returns", force: :cascade do |t|
+    t.string "return_date"
+    t.string "status"
+    t.bigint "user_id", null: false
+    t.bigint "lending_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lending_id"], name: "index_returns_on_lending_id"
+    t.index ["user_id"], name: "index_returns_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
@@ -69,8 +105,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_092942) do
 
   add_foreign_key "carts", "books"
   add_foreign_key "carts", "users"
+
   add_foreign_key "lendings", "books"
   add_foreign_key "lendings", "users"
   add_foreign_key "orders", "books"
   add_foreign_key "orders", "users"
+
+  add_foreign_key "payments", "orders"
+  add_foreign_key "payments", "users"
+  add_foreign_key "returns", "lendings"
+  add_foreign_key "returns", "users"
 end
