@@ -3,16 +3,44 @@ import { Link } from 'react-router-dom';
 
 function HomePage() {
   const [books, setBooks] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedGenre, setSelectedGenre] = useState('');
 
   useEffect(() => {
-    fetch('https://amazon-api-r8sx.onrender.com/books')
+    fetch('http://localhost:3000/books')
       .then(response => response.json())
       .then(data => setBooks(data))
       .catch(error => console.error(error));
   }, []);
 
+  const handleSearch = () => {
+    const filteredBooks = books.filter(book => (
+      book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      book.genre.toLowerCase().includes(searchQuery.toLowerCase())
+    ));
+    setBooks(filteredBooks);
+  }
+
+  const handleGenreChange = (event) => {
+    setSelectedGenre(event.target.value);
+  }
+
+  const filteredBooks = selectedGenre !== '' ? books.filter(book => book.genre === selectedGenre) : books;
+
   return (
     <div className='home-container'>
+      <div id='search-bar'>
+        <input type="text" placeholder="Search books by name or genre" onChange={(event) => setSearchQuery(event.target.value)}  id="search-input"/>
+        <button onClick={handleSearch} className="search-button">Search</button>
+        </div>
+
+        <select id= "dropdown" value={selectedGenre} onChange={handleGenreChange}>
+          <option value=''>All books</option>
+          <option value='Fantasy'>Fantasy</option>
+          <option value='Fiction'>Fiction</option>
+        </select>
+      
+
       <div className='side-bar'>
         <div id='nav'>
           <Link id='home' to='/'>Home</Link>
@@ -25,18 +53,18 @@ function HomePage() {
       </div>
 
       <div className='featured-books'>
-          <h2>Featured Books</h2>
+          <h2 id= "h2">Featured Books</h2>
           <div className='book-grid'>
-            {books.map(book => (
+            {filteredBooks.map(book => (
               <div className='book-card' key={book.id}>
-                <img src={book.image_url} alt={book.title} />
+                <img src={book.image_url}/>
                 <h3>{book.title}</h3>
                 <p className='book-author'>{book.author}</p>
                 <p className='book-description'>{book.description}</p>
                 <p className='book-rating'>{book.rating}</p>
                 <p className='book-genre'>{book.genre}</p>
                 <p className='book-price'>{book.price}</p>
-                <p className='book-location'>{book.location}</p>
+                {/* <p className='book-location'>{book.location}</p> */}
               </div>
             ))}
           </div>

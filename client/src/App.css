@@ -78,6 +78,7 @@ body{
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-left: 50px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -119,4 +120,44 @@ body{
 
 .book-card .book-location {
   font-style: italic;
+}
+
+#dropdown{
+ position: absolute;
+ margin-top: 20px;
+ margin-left: 800px;
+ font-size: large;
+ width: 150px;
+ height: 40px;
+ border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+#search-bar{
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 1000px;
+  font-size: large;
+}
+#h2{
+  margin-top: 30px;
+  margin-left: 100px;
+
+}
+#search-input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+.search-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
