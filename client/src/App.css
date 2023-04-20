@@ -1,11 +1,11 @@
-#root {
-  max-width: 1280px;
+ #root {
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+ }
 
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -40,3 +40,137 @@
 .read-the-docs {
   color: #888;
 }
+.add-book {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-book form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-book label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.add-book input[type="text"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-book button[type="submit"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #008CBA;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-book button[type="submit"]:hover {
+  background-color: #006A8E;
+} */ */
+.BookTable {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.BookTable h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.BookTable form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.BookTable input[type="text"],
+.BookTable input[type="number"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.BookTable button[type="submit"] {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.BookTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.BookTable th,
+.BookTable td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.BookTable th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.BookTable tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.BookTable button {
+  padding: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin: 0;
+}
+
+ul li a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+ul li a:hover {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
