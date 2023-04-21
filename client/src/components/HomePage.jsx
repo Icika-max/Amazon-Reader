@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+// import Admin from './Admin';
+// import Nav from './Nav';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function HomePage() {
   const [books, setBooks] = useState([]);
@@ -41,7 +44,7 @@ function HomePage() {
         </select>
       
 
-      <div className='side-bar'>
+      {/* <div className='side-bar'>
         <div id='nav'>
           <Link id='home' to='/'>Home</Link>
           <Link id='home' to='/Dashboard'>Admin</Link>
@@ -50,7 +53,7 @@ function HomePage() {
           <Link id='home' to='/Cart'>Cart</Link>
           <Link id='home' to='/LandingPage'>Logout</Link>
         </div>
-      </div>
+      </div> */}
 
       <div className='featured-books'>
           <h2 id= "h2">Featured Books</h2>
@@ -69,6 +72,16 @@ function HomePage() {
             ))}
           </div>
         </div>
+        {/* <BrowserRouter>
+      <Nav></Nav>
+        <Routes>
+          <Route path='/admin' element={<Admin></Admin>}>Admin</Route>
+          <Route path='/homepage' element={<HomePage></HomePage>}>Home</Route>
+         
+
+        </Routes>
+      
+      </BrowserRouter> */}
      
     </div>
   );
