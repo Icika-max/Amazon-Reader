@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 body{
   background-color: #636e7a;
   font-family: 'Raleway', sans-serif;
@@ -94,7 +94,12 @@ body{
   text-align: center;
 } */
 
-.logo {
+.book-card p {
+  margin: 0;
+  font-size:0.9em;
+  text-align: center;
+}
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -161,6 +166,9 @@ body{
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+
+.read-the-docs {
+  color: #888;
 } */
 
 /* .BookTable {
