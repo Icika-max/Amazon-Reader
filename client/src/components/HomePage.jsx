@@ -41,6 +41,9 @@ function HomePage() {
           <option value=''>All books</option>
           <option value='Fantasy'>Fantasy</option>
           <option value='Fiction'>Fiction</option>
+          <option value='Romance'>Romance</option>
+          <option value='Crime'>Crime</option>
+          <option value='Mystery'>Mystery</option>
         </select>
       
 
