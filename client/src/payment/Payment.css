@@ -1,0 +1,44 @@
+.payments-main {
+    display: flex;
+    min-height: 100vh;
+
+}
+
+.order-image-container {
+    border: 1px solid #ccc;
+    margin: 20px;
+    min-width: 50%;
+}
+
+.payment-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.payment-details form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-details form > input {
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+    width: 400px;
+    color: black;
+}
+
+.payment-details form > p {
+    margin-left: 150px;
+    padding: 10px;
+}
+
+.payment-details button {
+    width: 250px;
+    margin-left: 100px;
+}
+
+.payment-details h2 {
+    margin-left: 20px;
+}
