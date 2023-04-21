@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show update destroy ]
-  before_action :authorize_admin, except: [:show, :create]
+  before_action :authorize_admin, except: [:show,:index, :create]
 
   # GET /orders
   def index

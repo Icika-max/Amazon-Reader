@@ -6,7 +6,7 @@ class CartsController < ApplicationController
         render json: @carts_books
     end
 
-    # POST item to cart
+    # POST item to cart  
     def create
         @cart = Cart.create(carts_params)
         if @cart.valid?
@@ -19,7 +19,7 @@ class CartsController < ApplicationController
     # PATCH quantity of item in cart
     def update
         cart = Cart.find(params[:id])
-        cart.update(carts_params)
+        cart.update(carts_params)IJNJNJ
         render json: cart, status: :ok
     end
 
