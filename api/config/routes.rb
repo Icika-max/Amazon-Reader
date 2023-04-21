@@ -30,8 +30,8 @@ Rails.application.routes.draw do
 
    #admin_sessions
    post 'admin/login', to: 'admin_sessions#create'
-  delete 'admin/logout', to: 'admin_sessions#destroy'
-  post '/admin/signup', to: 'admins#register'
+   delete 'admin/logout', to: 'admin_sessions#destroy'
+   post '/admin/signup', to: 'admins#register'
 
  
  
