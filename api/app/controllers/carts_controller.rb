@@ -19,7 +19,7 @@ class CartsController < ApplicationController
     # PATCH quantity of item in cart
     def update
         cart = Cart.find(params[:id])
-        cart.update(carts_params)IJNJNJ
+        cart.update(carts_params)
         render json: cart, status: :ok
     end
 

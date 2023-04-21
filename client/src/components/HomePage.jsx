@@ -32,6 +32,7 @@ function HomePage() {
 
   return (
     <div className='home-container'>
+      <div className='hm-container'>
       <div id='search-bar'>
         <input type="text" placeholder="Search books by name or genre" onChange={(event) => setSearchQuery(event.target.value)}  id="search-input"/>
         <button onClick={handleSearch} className="search-button">Search</button>
@@ -85,6 +86,7 @@ function HomePage() {
         </Routes>
       
       </BrowserRouter> */}
+      </div>
      
     </div>
   );
