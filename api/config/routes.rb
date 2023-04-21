@@ -27,6 +27,14 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 
+   #sessions
+   post '/login', to: 'sessions#create'
+   delete '/logout', to: 'sessions#destroy'
+  #users
+   put '/reset-password/:username', to: 'users#reset_password'
+   get '/me', to: 'users#show'
+   post '/users', to: 'users#create'
+ 
   #  #sessions
   #  post '/users', to: 'users#create'
   #  post '/login', to: 'sessions#create'
@@ -45,6 +53,7 @@ Rails.application.routes.draw do
  
  
 
+  
   
  
   #carts
