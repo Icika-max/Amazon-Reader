@@ -8,6 +8,8 @@ import OrderTable from "../feature/orders/ordersTable";
 import LendingTable from "../feature/lendings/lendingTable";
 import StoreBooks from "../feature/books/StoreBooks";
 import LibraryBooks from "../feature/books/LibraryBooks";
+import Cart from "./cart/Cart";
+import Payment from "./payment/Payment";
 
 const Home = () => {
     return ( 
@@ -23,6 +25,11 @@ const Home = () => {
           <Route path='/books' element={<BookTable></BookTable>}>Books</Route>
           <Route path='/orders' element={<OrderTable></OrderTable>}>Orders</Route>
           <Route path='/lendings' element={<LendingTable></LendingTable>}>Lendings</Route>
+          <Route path='/cart' element={<Cart></Cart>}>Admin</Route>
+          <Route path='/payment' element={<Payment></Payment>}>Admin</Route>
+
+
+
 
           {/* <Route path='/lendings' element={<LendingTable></LendingTable>}>Lending</Route> */}
           {/* <Route path='/myaccount' element={<MyAccountTable></MyAccountTable>}>Books</Route> */}

@@ -22,6 +22,7 @@ function Payment() {
                         user_id: order.user_id,
                         status: 'pending'
                     })
+
                 })
                 .then(res=>{
                     if (res.ok) {
@@ -50,7 +51,20 @@ function Payment() {
                 .then(data=>console.log(data))
                 .catch(error=>console.log(error))
             }
+           
+        fetch(`http://localhost:3000/carts/${order.id}`, {
+            method: 'DELETE'
         })
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Failed to delete item from the backend.')
+            }
+        })
+        .catch(err => {
+            console.error(err)
+        })
+        })
+        
     }
     
     return (
