@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
-
-  before_action :set_book, only: %i[ show update destroy ]
-  before_action :authorized, only: [:show]
+  # before_action :authorize_admin, except: [:show, :index]
+  # before_action :set_book, only: %i[ show update destroy ]
+  # before_action :authorized, only: [:show]
 
 
 
