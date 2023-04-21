@@ -45,16 +45,16 @@ function OrderTable() {
   };
 
   return (
-    <div>
-      <h1>Orders Table</h1>
-      <form onSubmit={handleFormSubmit}>
+    <div className='order-container'>
+      <h1 className='order-heading'>Orders Table</h1>
+      <form className='order-form' onSubmit={handleFormSubmit}>
         <input type="number" name="user_id" value={formData.user_id || ''} onChange={handleFormChange} placeholder='User id'/>
         <input type="number" name="book_id" value={formData.book_id || ''} onChange={handleFormChange} placeholder='Book id'/>
         <input type="text" name="status" value={formData.status || ''} onChange={handleFormChange} placeholder='Status' />
         {/* <input type="number" name="price" value={formData.price || ''} onChange={handleFormChange} /> */}
         <button type="submit">{editing ? 'Update Order' : 'Add Order'}</button>
       </form>
-      <table>
+      <table className='order-table'>
         <thead>
           <tr>
             <th>User id</th>

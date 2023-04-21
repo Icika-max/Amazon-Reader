@@ -1,4 +1,255 @@
- #root {
+.BookTable {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 48%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table button {
+  margin-right: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.table button:hover {
+  background-color: #0056b3;
+}
+
+
+.lending-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lending-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.lending-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.lending-form input[type="number"],
+.lending-form input[type="date"],
+.lending-form input[type="text"] {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.lending-form button[type="submit"],
+.lending-form button[type="button"] {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  margin-right: 1rem;
+}
+
+.lending-form button[type="submit"]:hover,
+.lending-form button[type="button"]:hover {
+  background-color: #2e8b57;
+}
+
+.lending-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.lending-table th,
+.lending-table td {
+  text-align: left;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.lending-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.lending-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.lending-table tr:hover {
+  background-color: #ddd;
+}
+
+.lending-table td button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  margin-right: 1rem;
+}
+
+.lending-table td button:last-child {
+  background-color: #008cba;
+}
+
+.lending-table td button:hover {
+  background-color: #d32f2f;
+}
+
+.lending-table td button:last-child:hover {
+  background-color: #005b7f;
+}
+.order-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.order-form input {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid gray;
+}
+
+.order-form button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.order-table {
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.order-table th,
+.order-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid gray;
+}
+
+.order-table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.order-table td:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+.order-table button {
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+.nav {
+  background-color: #333;
+  color: #fff;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.list li a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.list li a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+
+
+#root {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
@@ -80,7 +331,7 @@
 .add-book button[type="submit"]:hover {
   background-color: #006A8E;
 } */ */
-.BookTable {
+/* .BookTable {
   margin: 20px;
   font-family: Arial, sans-serif;
 }
@@ -172,5 +423,5 @@ ul li a {
 ul li a:hover {
   background-color: #e9ecef;
   color: #007bff;
-}
+} */
 

@@ -63,9 +63,9 @@ function LendingTable() {
   }
 
   return (
-    <div>
-      <h1>Lendings Table</h1>
-      <form onSubmit={handleFormSubmit}>
+    <div className='lending-container'>
+      <h1 className='leading-heading'>Lendings Table</h1>
+      <form className='leading-form' onSubmit={handleFormSubmit}>
         <input type="number" name="user_id" value={formData.user_id || ''} onChange={handleFormChange} placeholder='User-id' />
         <input type="number" name="book_id" value={formData.book_id || ''} onChange={handleFormChange}  placeholder='Book-id'/>
         <input type="date" name="due_date" value={formData.due_date || ''} onChange={handleFormChange} placeholder='Due date'/>
@@ -74,7 +74,7 @@ function LendingTable() {
         <button type="submit">{editing ? 'Update Lending' : 'Add Lending'}</button>
         {/* <button type="button" onClick={handleAddLending}>Add New</button> */}
       </form>
-      <table>
+      <table className='lending-table'>
         <thead>
           <tr>
             <th>User id</th>
