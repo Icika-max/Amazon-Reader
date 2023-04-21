@@ -32,7 +32,7 @@ customer_role = Role.create!(name: 'customer')
     email: Faker::Internet.email,
     password: 'password'
   )
-  UserRole.create!(user: user, role: [admin_role, customer_role].sample)
+  # UserRole.create!(user: user, role: [admin_role, customer_role].sample)
 end
 
 # Create books with location
