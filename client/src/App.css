@@ -1,4 +1,47 @@
-.BookTable {
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+/* .logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+/* .BookTable {
   margin: 0 auto;
   max-width: 800px;
   padding: 20px;
@@ -66,7 +109,96 @@
 
 .table button:hover {
   background-color: #0056b3;
+
+} */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 80px;
 }
+.admin-header {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #6c5ce7;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+
+.left {
+  width: 45%;
+  padding-right: 20px;
+}
+
+.right {
+  width: 55%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input,
+.form button {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #45a049;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.table td img {
+  max-width: 100px;
+  height: auto;
+}
+
+.table td:last-child {
+  text-align: center;
+}
+
+.table td:last-child button {
+  margin-left: 10px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+.table td:last-child button:hover {
+  background-color: #e53935;
+}
+
 
 
 .lending-container {
@@ -158,42 +290,37 @@
 .lending-table td button:last-child:hover {
   background-color: #005b7f;
 }
+.page-container {
+  display: flex;
+  justify-content: center;
+  background-color: #6d6969;
+}
+
+/* .order-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+} */
 .order-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
-
-.order-heading {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.order-form {
+.list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
+  justify-content: center; /* Add this line to center the items */
+  list-style: none;
+  margin: 0;
+  padding: 10px;
 }
 
-.order-form input {
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  border: 1px solid gray;
-}
-
-.order-form button {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  border: none;
-  background-color: #4caf50;
-  color: white;
-  cursor: pointer;
-}
 
 .order-table {
   border-collapse: collapse;
-  margin-bottom: 2rem;
+  margin-right: 2rem;
 }
 
 .order-table th,
@@ -221,9 +348,59 @@
   color: white;
   cursor: pointer;
 }
+.order-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* .order-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+} */
+/* .order-heading {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
+} */
+
+.order-form input {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid gray;
+}
+
+.order-form button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
 .nav {
   background-color: #333;
   color: #fff;
+  padding: 1rem;
 }
 
 .list {
@@ -231,7 +408,7 @@
   justify-content: space-between;
   list-style: none;
   margin: 0;
-  padding: 10px;
+  padding: 0;
 }
 
 .list li a {
@@ -246,182 +423,3 @@
   background-color: #fff;
   color: #333;
 }
-
-
-
-#root {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
- }
-
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-.add-book {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.add-book form {
-  display: flex;
-  flex-direction: column;
-}
-
-.add-book label {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.add-book input[type="text"] {
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.add-book button[type="submit"] {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #008CBA;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.add-book button[type="submit"]:hover {
-  background-color: #006A8E;
-} */ */
-/* .BookTable {
-  margin: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.BookTable h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.BookTable form {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.BookTable input[type="text"],
-.BookTable input[type="number"] {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.BookTable button[type="submit"] {
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.BookTable table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.BookTable th,
-.BookTable td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-
-.BookTable th {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.BookTable tbody tr:hover {
-  background-color: #f5f5f5;
-}
-
-.BookTable button {
-  padding: 5px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-
-ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f8f9fa;
-  padding: 1rem;
-  margin: 0;
-}
-
-ul li a {
-  color: #333;
-  text-decoration: none;
-  margin-right: 1rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-ul li a:hover {
-  background-color: #e9ecef;
-  color: #007bff;
-} */
-

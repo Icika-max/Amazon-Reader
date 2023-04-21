@@ -36,21 +36,58 @@ customer_role = Role.create!(name: 'customer')
 end
 
 # Create books with location
-10.times do
-  Book.create!(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
-    description: Faker::Lorem.paragraph,
-    rating: Faker::Number.between(from: 1, to: 5),
-    genre: Faker::Book.genre,
-    price: Faker::Commerce.price,
-    image_url: Faker::Internet.url,
-    location: ['store', 'library'].sample
-  )
-end
+# 10.times do
+#   Book.create!(
+#     title: Faker::Book.title,
+#     author: Faker::Book.author,
+#     description: Faker::Lorem.paragraph,
+#     rating: Faker::Number.between(from: 1, to: 5),
+#     genre: Faker::Book.genre,
+#     price: Faker::Commerce.price,
+#     image_url: Faker::Internet.url,
+#     location: ['store', 'library'].sample
+#   )
+# end
+book1 = Book.create(title: "The Great Gatsby", author: "F. Scott Fitzgerald", description: "The story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan.", rating: 4.5, genre: "Fiction", price: 9.99, image_url: "https://i.pinimg.com/564x/11/91/8f/11918f3c356159ed09856eb1664f9bff.jpg", location: "store")
+book2 = Book.create(title: "To Kill a Mockingbird", author: "Harper Lee", description: "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it.", rating: 4.8, genre: "Crime", price: 0, image_url: "https://i.pinimg.com/564x/b3/43/3f/b3433fb70fe90ba77c06d385dc5e2fe5.jpg", location: "library")
+book3 = Book.create(title: "The Hobbit", author: "J.R.R. Tolkien", description: "Bilbo Baggins, a hobbit, becomes a burglar when he is asked to help reclaim treasure from a dragon.", rating: 4.7, genre: "Fantasy", price: 14.99, image_url: "https://i.pinimg.com/564x/76/9f/51/769f51d079c66c1a9317b6f5df4859b5.jpg", location: "store")
+book4 = Book.create(title: "The Catcher in the Rye", author: "J.D. Salinger", description: "The story of Holden Caulfield, a teenager who wanders around New York City after being expelled from an elite prep school.", rating: 4.2, genre: "Fiction", price: 0, image_url: "https://i.pinimg.com/564x/b1/1e/da/b11eda6bcd0eb6dfb7acde327f89e59d.jpg", location: "library")
+book5 = Book.create(title: "1984", author: "George Orwell", description: "A dystopian novel set in a totalitarian society, in which a man named Winston Smith rebels against the oppressive regime.", rating: 4.6, genre: "Romance", price: 10.99, image_url: "https://i.pinimg.com/564x/43/75/b7/4375b7d9bf24b88aa53744b417227485.jpg", location: "store")
+book6 = Book.create(title: "Gone Girl", author: "Gillian Flynn", description: "The story of a woman who disappears on her fifth wedding anniversary, and the subsequent investigation.", rating: 4.0, genre: "Mystery", price: 8.99, image_url: "https://i.pinimg.com/564x/34/c0/c9/34c0c9b1c20d23a12ee55601f42a261d.jpg", location: "store")
+book7 = Book.create(title: "Harry Potter and the Philosopher's Stone", author: "J.K. Rowling", description: "The first book in the Harry Potter series, which follows the journey of a young wizard and his friends as they attend Hogwarts School of Witchcraft and Wizardry.", rating: 4.9, genre: "Fantasy", price: 0.0, image_url: "https://i.pinimg.com/564x/27/2a/8e/272a8e2f4444f2344a4abf21db3cc12f.jpg", location: "library")
+
+book8 = Book.create(title: "The Da Vinci Code", author: "Dan Brown", description: "A murder mystery that takes place in Paris, with clues related to the works of Leonardo da Vinci.", rating: 4.2, genre: "Crime", price: 8.99, image_url: "https://i.pinimg.com/564x/b6/c3/6b/b6c36bf2676be15a6c1f86b156f38a1a.jpg", location: "store")
+
+book9 = Book.create(title: "Pride and Prejudice", author: "Jane Austen", description: "A classic novel about the love lives of the Bennet sisters and their relationships with wealthy gentlemen.", rating: 4.6, genre: "Romance", price: 0.0, image_url: "https://i.pinimg.com/564x/04/33/5a/04335ad804c4b4f4a4c28e5f3ab54e5a.jpg", location: "library")
+
+book10 = Book.create(title: "The Hunger Games", author: "Suzanne Collins", description: "A dystopian novel set in a future where teenagers are forced to compete in a televised battle to the death.", rating: 4.3, genre: "Fantansy", price: 9.99, image_url: "https://i.pinimg.com/564x/88/2d/28/882d2859c71ed0f1e43d95c6cd91de6e.jpg", location: "store")
+
+book11 = Book.create(title: "Gone Girl", author: "Gillian Flynn", description: "A psychological thriller about a man who becomes the prime suspect in the disappearance of his wife.", rating: 4.0, genre: "Crime", price: 0.0, image_url: "https://i.pinimg.com/564x/5a/0e/e5/5a0ee5a01c1460b1a6b1d6fa9a6b0c6d.jpg", location: "library")
+
+book12 = Book.create(title: "The Girl with the Dragon Tattoo", author: "Stieg Larsson", description: "A crime thriller about a journalist and a hacker who investigate the disappearance of a wealthy man's niece.", rating: 4.2, genre: "Mystery", price: 10.99, image_url: "https://i.pinimg.com/564x/df/75/f7/df75f7de86152a772e1025b5c24688d6.jpg", location: "store")
+
+book13 = Book.create(title: "The Lord of the Rings", author: "J.R.R. Tolkien", description: "An epic fantasy novel that follows the journey of a hobbit, Frodo Baggins, to destroy a powerful ring that could bring about the end of the world", rating: 4.0, genre: "Mystery", price: "9.0", image_url: "https://i.pinimg.com/564x/df/75/f7/df75f7de86152a772e1025b5c24688d6.jpg",location: "store")
+book14 = Book.create(title: "The Da Vinci Code", author: "Dan Brown", description: "A murder in the Louvre Museum and clues in paintings by Leonardo da Vinci lead to the discovery of a religious mystery.", rating: 4.1, genre: "Mystery", price: 0.0, image_url: "https://i.pinimg.com/564x/28/7c/8c/287c8c623cf24855b8e484262a67a048.jpg", location: "library")
+
+book15 = Book.create(title: "The Girl with the Dragon Tattoo", author: "Stieg Larsson", description: "A journalist and a computer hacker investigate a decades-old disappearance and uncover dark secrets.", rating: 4.4, genre: "Crime", price: 11.99, image_url: "https://i.pinimg.com/564x/0d/7d/79/0d7d793c9ba9f1d2358b53a72b7ed35c.jpg", location: "store")
+
+book16 = Book.create(title: "The Notebook", author: "Nicholas Sparks", description: "The story of a young couple's love that endures over many years.", rating: 4.2, genre: "Romance", price: 0.0, image_url: "https://i.pinimg.com/564x/63/98/9a/63989aa83c5a6db5a6c86b6d5bb03c70.jpg", location: "library")
+
+book17 = Book.create(title: "The Hunger Games", author: "Suzanne Collins", description: "A dystopian novel set in a future where teenagers are forced to compete in a televised battle to the death.", rating: 4.3, genre: "Fiction", price: 9.99, image_url: "https://i.pinimg.com/564x/88/2d/28/882d2859c71ed0f1e43d95c6cd91de6e.jpg", location: "store")
+
+book18 = Book.create(title: "Gone Girl", author: "Gillian Flynn", description: "A woman disappears on the day of her fifth wedding anniversary, and her husband becomes the prime suspect.", rating: 4.0, genre: "Mystery", price: 0.0, image_url: "https://i.pinimg.com/564x/75/6b/9e/756b9ee350e6e73c4237c4c4a4cc9515.jpg", location: "library")
+
+book19 = Book.create(title: "The Handmaid's Tale", author: "Margaret Atwood", description: "A dystopian novel set in a future where women are oppressed and used for reproduction.", rating: 4.6, genre: "Science Fiction", price: 10.99, image_url: "https://i.pinimg.com/564x/3b/3f/8f/3b3f8fcd166d9b1ff8c956983f08d23c.jpg", location: "store")
+book20 = Book.create(title: "The Alchemist", author: "Paulo Coelho", description: "A shepherd boy travels to Egypt in search of treasure and discovers the true meaning of life. This is a classic tale of following your dreams and finding your purpose in life.", rating: 4.7, genre: "Fiction", price: 7.99, image_url: "https://i.pinimg.com/564x/3e/7a/b8/3e7ab83d9a0580c0fb13f7bdf44f54e8.jpg", location: "store")
+
+
+
+
+
+
 
 # Create carts
-10.times do
+20.times do
   Cart.create!(
     quantity: Faker::Number.between(from: 1, to: 5),
     price: Faker::Commerce.price,
@@ -60,7 +97,7 @@ end
 end
 
 # Create lendings
-10.times do
+20.times do
   Lending.create!(
     book: Book.all.sample,
     user: User.all.sample,
@@ -69,7 +106,7 @@ end
 end
 
 # Create orders
-10.times do
+20.times do
   Order.create!(
     book: Book.all.sample,
     user: User.all.sample
@@ -77,7 +114,7 @@ end
 end
 
 # Create payments
-10.times do
+20.times do
   Payment.create!(
     amount: Faker::Commerce.price,
     status: ['completed', 'pending'].sample,
@@ -87,7 +124,7 @@ end
 end
 
 # Create returns
-10.times do
+20.times do
   Return.create!(
     return_date: Faker::Date.between(from: '2023-04-01', to: '2023-04-20'),
     status: ['completed', 'pending'].sample,

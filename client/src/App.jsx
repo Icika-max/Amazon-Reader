@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>AdminDashboard</h1>
+      <h1 className='admin-header'>Admin Dashboard</h1>
       <BrowserRouter>
       <Navbar></Navbar>
         <Routes>
