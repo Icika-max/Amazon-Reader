@@ -35,7 +35,7 @@ body{
   cursor: pointer;
 }
 .hm-container{
-  background-color: #468374;
+  background-color: #ddeeea;
 
 }
 
@@ -262,7 +262,7 @@ body{
 
 
 
-.container {
+.book-container {
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -280,22 +280,22 @@ body{
 }
 
 
-.left {
+.book-left {
   width: 45%;
   padding-right: 20px;
 }
 
-.right {
+.book-right {
   width: 55%;
 }
 
-.form {
+.book-form {
   display: flex;
   flex-direction: column;
 }
 
-.form input,
-.form button {
+.book-form input,
+.book-form button {
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
@@ -303,51 +303,55 @@ body{
   font-size: 16px;
 }
 
-.form button {
+.book-form button {
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
 }
 
-.form button:hover {
+.book-form button:hover {
   background-color: #45a049;
 }
 
-.table {
+.book-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.table td,
-.table th {
+.book-table td,
+.book-table th {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
-.table th {
+.book-table th {
   background-color: #4CAF50;
   color: white;
 }
 
-.table td img {
+.book-table td img {
   max-width: 100px;
   height: auto;
 }
 
-.table td:last-child {
+.book-table td:last-child {
   text-align: center;
 }
 
-.table td:last-child button {
+.book-table td:last-child button {
   margin-left: 10px;
   background-color: #f44336;
   color: white;
   cursor: pointer;
 }
 
-.table td:last-child button:hover {
+.book-table td:last-child button:hover {
   background-color: #e53935;
+}
+td.view-image img {
+  width: 100px;
+  height: auto;
 }
 
 
@@ -614,5 +618,71 @@ body{
   background-color: #fff;
   color: #333;
 }
+.store-container {
+  padding: 20px;
+ 
+}
+.str{
+  background-color: #ddeeea;
+}
+.store-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+li {
+  flex-basis: 33.33%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+img {
+  /* width: 100%;
+  height: auto;
+  margin-bottom: 10px; */
+  
+    width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+  
+  
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0;
+}
+
+.add-cart-btn {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.add-cart-btn:hover {
+  background-color: #004080;
+}
+.library-container{
+  background-color: #ddeeea;
+}
+.library-heading{
+  text-align: center;
+}

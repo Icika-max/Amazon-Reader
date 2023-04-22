@@ -45,8 +45,8 @@ console.log(books)
   
 
   return (
-    <div>
-      <h2>Library Books</h2>
+    <div className='library-container'>
+      <h2 className='library-heading'>Library Books</h2>
       <ul>
         {storeBooks.map(book => (
           <li key={book.id}>

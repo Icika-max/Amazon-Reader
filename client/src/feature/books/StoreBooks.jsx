@@ -36,8 +36,9 @@ const StoreBooks = () => {
   };
 
   return (
-    <div>
-      <h2>Store Books</h2>
+    <div className='store-container'>
+      <div className='str'>
+      <h2 className='store-heading'>Store Books</h2>
       <ul>
         {storeBooks.map((book) => (
           <li key={book.id}>
@@ -48,10 +49,11 @@ const StoreBooks = () => {
             <p>{book.description}</p>
             <p>{book.genre}</p>
             <p>{book.price}</p>
-            <button onClick={() => {handleAddToCart(book.id, book.price)}}>Add To Cart</button>
+            <button className='add-cart-btn' onClick={() => {handleAddToCart(book.id, book.price)}}>Add To Cart</button>
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };
