@@ -17,7 +17,7 @@ body {
 .bckg img {
   width: 50%;
   max-width: 999px;
-  max-height: 810px;
+  max-height: 10px;
   object-fit: contain;
 }
 

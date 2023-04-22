@@ -57,7 +57,7 @@ export default function Login() {
       <div className="sign_in">
         <form onSubmit={handleLogin}>
           
-          <div className="card " style={{ width: "16rem" }}>
+          <div className="card " style={{ width: "10rem" ,height:"53vh" }}>
             <div className="card-body ">
             <label htmlFor="usernameOrEmail">Username or Email</label>
                 <br />
