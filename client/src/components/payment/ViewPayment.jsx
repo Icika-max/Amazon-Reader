@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 function ViewPayment({orders, onCompletePurchase}) {
     console.log(orders);
     let totalSum = 0;
@@ -27,7 +28,7 @@ function ViewPayment({orders, onCompletePurchase}) {
                     <p>Total Payable {totalSum.toFixed(2)}</p>
                     
                 </form>
-                <button onClick={()=>onCompletePurchase()}>Complete Purchase</button>
+                <Link to="/home"><button onClick={()=>onCompletePurchase()}>Complete Purchase</button></Link>
             </div>
         </div>
 

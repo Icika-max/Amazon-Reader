@@ -26,9 +26,9 @@ Rails.application.routes.draw do
 
 
   #  #sessions
-  #  post '/users', to: 'users#create'
-  #  post '/login', to: 'sessions#create'
-  #  delete '/logout', to: 'sessions#destroy'
+    post '/users', to: 'users#create'
+    post '/login', to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
 
    #admin_sessions
    post 'admin/login', to: 'admin_sessions#create'

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authorize_admin, except: [:show, :update, :create]
-  before_action :authorize, except: [:create]
+  # before_action :authorize_admin, except: [:show, :index, :update, :create]
+  # before_action :authorize, except: [:create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :user_record_missing
   rescue_from ActiveRecord::RecordInvalid, with: :validation_error

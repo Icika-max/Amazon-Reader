@@ -45,10 +45,10 @@ function BookTable() {
   };
 
   return (
-    <div className="container">
-      <div className="left">
+    <div className="book-container">
+      <div className="book-left">
         <h1 className="heading">Books Table</h1>
-        <form className="form" onSubmit={handleFormSubmit}>
+        <form className="book-form" onSubmit={handleFormSubmit}>
           <input type="text" name="title" value={formData.title || ''} onChange={handleFormChange} placeholder="Title" />
           <input type="text" name="author" value={formData.author || ''} onChange={handleFormChange} placeholder="Author" />
           <input type="text" name="description" value={formData.description || ''} onChange={handleFormChange} placeholder="Description" />
@@ -61,8 +61,8 @@ function BookTable() {
           <button type="submit">{editing ? 'Update Book' : 'Add Book'}</button>
         </form>
       </div>
-      <div className="right">
-       <table className="table">
+      <div className="book-right">
+       <table className="book-table">
   <thead>
     <tr>
       <th>Title</th>
@@ -84,7 +84,7 @@ function BookTable() {
         <td>{book.price}</td>
         <td>{book.rating}</td>
         <td>{book.genre}</td>
-        <td><img src={book.image_url} alt={book.title} /></td>
+        <td className='view-image'><img src={book.image_url} alt={book.title} /></td>
         <td>{book.location}</td>
         <td>
           <button onClick={() => handleEditBook(book.id)}>Edit</button>
