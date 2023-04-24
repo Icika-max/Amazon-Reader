@@ -1,30 +1,31 @@
+import React from 'react';
+import './App.css'
+import Home from './components/Home';
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
 
-// import "./App.css"
-
-import Login from './components/user/Login'
-import Register from "./components/user/Register";
-import Landingpage from "./components/landingpage/Landingpage";
+// import BookTable from './feature/books/BooksTable'
+// import OrderTable from './feature/orders/ordersTable'
+// import LendingTable from './feature/lendings/lendingTable'
+// // import MyAccountTable from './feature/myAccount/myAccountTable'
+// import { BrowserRouter,Router, Route, Routes } from 'react-router-dom'
+// import Navbar from './components/Navbar'
+// import HomePage from './components/HomePage';
 
 function App() {
-  
-
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path="/Login" element={<Login />} />
-          <Route exact path="/Register" element={<Register />} />
-          <Route exact path="/" element={<Landingpage />} />
-
-        </Routes>
-      </Router>
+    <Home></Home>
+    
     </div>
   )
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<HomePage />} />
+    //   </Routes>
+    // </Router>
+  
 }
 
-export default App
+export default App;

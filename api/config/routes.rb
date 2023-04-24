@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_roles
+  resources :roles
 
   resources :lendings
   resources :orders
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   get '/store', to: 'books#store'
   get '/library', to: 'books#library'
 
-  resources :admins
+  # resources :admins
 
   resources :returns
   resources :payments
@@ -28,10 +30,15 @@ Rails.application.routes.draw do
    post '/login', to: 'sessions#create'
    delete '/logout', to: 'sessions#destroy'
 
-   #admin_sessions
-   post 'admin/login', to: 'admin_sessions#create'
-  delete 'admin/logout', to: 'admin_sessions#destroy'
-  post '/admin/signup', to: 'admins#register'
+  #  #admin_sessions
+  #  post 'admin/login', to: 'admin_sessions#create'
+  # delete 'admin/logout', to: 'admin_sessions#destroy'
+  # post '/admin/signup', to: 'admins#register'
+
+  #  Routes for AuthenticationController
+   post '/create_account', to: 'authentication#create_account'
+   post '/login_account', to: 'authentication#login_account'
+   delete '/logout_account', to: 'authentication#logout_account'
 
  
  
@@ -39,4 +46,8 @@ Rails.application.routes.draw do
   
   #carts
   resources :carts, only: [:index, :create, :update, :destroy]
+
+   # Routing logic: fallback requests for React Router.
+  # Leave this here to help deploy your app later!
+  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

@@ -1,4 +1,49 @@
-body {
+
+ .auth-form-container, .register-form, .login-form{
+  display: flex;
+  flex-direction: column; 
+  background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+
+}
+@media screen and (min-width: 600px){
+  .auth-form-container{
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+}
+.auth-form-container{
+  padding: 5rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+label{
+  text-align: left;
+  padding: 0.25rem 0;
+}
+input{
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+}
+
+button{
+  border: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #7439db;
+}
+.link-btn{
+  background: none;
+  color: white;
+  text-decoration: underline;
+}
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,4 +78,78 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 0.1rem;
+} */
+
+/* .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
+
+.login-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+.lg-sign_in {
+  background-color: #ffffff;
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login-form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.login-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #008CBA;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #006E8B;
+}
+
+.login-error {
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #008CBA;
+} */

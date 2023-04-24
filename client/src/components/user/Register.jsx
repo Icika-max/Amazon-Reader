@@ -69,7 +69,11 @@ export default function Register() {
     <div className="bckg">
       <div>
         <img src="background-3.jpg" />
-      </div>
+      </div> */}
+      <h2>Register</h2>
+
+          <form className="register-form" onSubmit={handleSubmit} >
+          <label htmlFor="username">Full name</label>
 
       <div className="d-flex flex-column mb-3" style={{ width: "20rem", margin: "0 auto" }}>
 
@@ -78,10 +82,13 @@ export default function Register() {
             <h1>Register</h1>
             <label>Username</label>
             <input placeholder="Enter full name" type="text" name="username" value={username} onChange={handleInputChange} />
-            <label>Email:</label>
+            <label htmlFor="email">email</label>
+
             <input placeholder="Enter your email" type="email" name="email" value={email} onChange={handleInputChange} />
             {isRegistering }
-            <label>Password:</label>
+            <label htmlFor="password">password</label>
+
+        
             <input type="password" name="password" value={password} onChange={handleInputChange} />
             <button type="submit">{isRegistering ? "Registering..." : "Register"}</button>
 
