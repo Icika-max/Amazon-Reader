@@ -10,12 +10,15 @@ import StoreBooks from "../feature/books/StoreBooks";
 import LibraryBooks from "../feature/books/LibraryBooks";
 import Cart from "./cart/Cart";
 import Payment from "./payment/Payment";
+import LandingPage from "./landingpage/Landingpage";
+import Register from "./user/Register";
+import Login from "./user/Login";
 
 const Home = () => {
     return ( 
         
-             <BrowserRouter>
-      <Nav></Nav>
+      <BrowserRouter>
+        <Nav></Nav>
         <Routes>
           <Route path='/admin' element={<Admin></Admin>}>Admin</Route>
           <Route path='/home' element={<HomePage></HomePage>}>Home</Route>
@@ -27,13 +30,9 @@ const Home = () => {
           <Route path='/lendings' element={<LendingTable></LendingTable>}>Lendings</Route>
           <Route path='/cart' element={<Cart></Cart>}>Admin</Route>
           <Route path='/payment' element={<Payment></Payment>}>Admin</Route>
-
-
-
-
-          {/* <Route path='/lendings' element={<LendingTable></LendingTable>}>Lending</Route> */}
-          {/* <Route path='/myaccount' element={<MyAccountTable></MyAccountTable>}>Books</Route> */}
-
+          <Route path='/register' element={<Register/>}></Route>
+          <Route path='/login'element={<Login/>}></Route>
+          <Route path='/' element={<LandingPage/>}></Route>
         </Routes>
       
       </BrowserRouter>
