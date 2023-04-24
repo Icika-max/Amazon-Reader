@@ -26,9 +26,7 @@ Rails.application.routes.draw do
 
 
   #  #sessions
-  #  post '/users', to: 'users#create'
-   post '/login', to: 'sessions#create'
-  #  delete '/logout', to: 'sessions#destroy'
+ 
     post '/users', to: 'users#create'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
@@ -37,10 +35,7 @@ Rails.application.routes.draw do
    post 'admin/login', to: 'admin_sessions#create'
    delete 'admin/logout', to: 'admin_sessions#destroy'
    post '/admin/signup', to: 'admins#register'
-  #  #admin_sessions
-  #  post 'admin/login', to: 'admin_sessions#create'
-  # delete 'admin/logout', to: 'admin_sessions#destroy'
-  # post '/admin/signup', to: 'admins#register'
+  
 
    # Routes for AuthenticationController
    post '/create_account', to: 'authentication#create_account'
