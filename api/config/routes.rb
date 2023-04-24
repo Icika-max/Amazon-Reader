@@ -25,10 +25,10 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 
-   #sessions
-   post '/users', to: 'users#create'
+  #  #sessions
+  #  post '/users', to: 'users#create'
    post '/login', to: 'sessions#create'
-   delete '/logout', to: 'sessions#destroy'
+  #  delete '/logout', to: 'sessions#destroy'
 
   #  #admin_sessions
   #  post 'admin/login', to: 'admin_sessions#create'
