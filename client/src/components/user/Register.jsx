@@ -36,7 +36,7 @@ export default function Register() {
     if (username in cachedResponse) {
       const data = cachedResponse[username];
       if (data.message) {
-        window.location.href = "/login"; // redirect to login page
+        window.location.href = "/Login"; // redirect to login page
         return;
       } else {
         setError(data.errors);
@@ -57,7 +57,7 @@ export default function Register() {
     });
     const { message, errors } = await response.json();
     if (message) {
-      window.location.href = "/login"; // redirect to login page
+      window.location.href = "/Login"; // redirect to login page
     } else {
       setError(errors);
       setIsRegistering(false);
@@ -65,12 +65,14 @@ export default function Register() {
     setCachedResponse({ ...cachedResponse, [username]: { message, errors } });
   };
   return (
+    
     <div className="bckg">
       <div>
         <img src="background-3.jpg" />
       </div>
 
       <div className="d-flex flex-column mb-3" style={{ width: "20rem", margin: "0 auto" }}>
+
         <div className="card">
           <form onSubmit={handleSubmit} className="d-flex flex-column mb-3">
             <h1>Register</h1>
@@ -89,7 +91,9 @@ export default function Register() {
             {error && <p>{error}</p>}
           </form>
         </div>
+
       </div>
+      
     </div>
   );
 }

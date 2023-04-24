@@ -41,7 +41,7 @@ export default function Login() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      history.push("");
+      history.push("/");
       window.location.reload();
     }
   }, [isLoggedIn, history]);
@@ -94,7 +94,7 @@ export default function Login() {
                     style={{ color: "red" }}
                   >
                     Register
-                  </NavLink>
+                  </NavLink> 
                 </p>
         
               </center>

@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(120, 122, 122);
+  background-color: rgb(201, 240, 240);
 } 
 
 .center {
@@ -35,7 +35,7 @@ input {
   border: 1px solid gray;
 }
 
-button[type="submit"] {
+/* button[type="submit"] {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   background-color: #4caf50;
@@ -43,7 +43,7 @@ button[type="submit"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 
 .bckg {
@@ -62,6 +62,8 @@ button[type="submit"] {
   max-width: 999px;
   max-height: 810px;
   object-fit: contain; 
+  border-radius: 3%;
+
 }
 
 
