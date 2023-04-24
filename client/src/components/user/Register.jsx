@@ -65,21 +65,23 @@ export default function Register() {
     setCachedResponse({ ...cachedResponse, [username]: { message, errors } });
   };
   return (
-    <div className="bckg">
-      <div>
+    <div className="auth-form-container">
+      {/* <div>
         <img src="background-3.jpg" />
-      </div>
+      </div> */}
+      <h2>Register</h2>
 
-      <div className="d-flex flex-column mb-3" style={{ width: "20rem", margin: "0 auto" }}>
-        <div className="card">
-          <form onSubmit={handleSubmit} className="d-flex flex-column mb-3">
-            <h1>Register</h1>
-            <label>Username</label>
+          <form className="register-form" onSubmit={handleSubmit} >
+          <label htmlFor="username">Full name</label>
+
             <input placeholder="Enter full name" type="text" name="username" value={username} onChange={handleInputChange} />
-            <label>Email:</label>
+            <label htmlFor="email">email</label>
+
             <input placeholder="Enter your email" type="email" name="email" value={email} onChange={handleInputChange} />
             {isRegistering }
-            <label>Password:</label>
+            <label htmlFor="password">password</label>
+
+        
             <input type="password" name="password" value={password} onChange={handleInputChange} />
             <button type="submit">{isRegistering ? "Registering..." : "Register"}</button>
 
@@ -89,7 +91,5 @@ export default function Register() {
             {error && <p>{error}</p>}
           </form>
         </div>
-      </div>
-    </div>
   );
 }
