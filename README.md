@@ -85,3 +85,49 @@ npm install --prefix client
 
 ```bash
 npm start --prefix client
+
+## User Stories
+
+Admin
+- An administrator acts as the overload of the entire bookstore. The following are functionalities executed by the administrator.
+# Auth
+- Add a new book to the store.
+- Update and delete a book from the store.
+- Approve / Reject all book orders (purchases).
+- Approve / Reject all book lending requests.
+- View all books in the store and library.
+
+## User
+- A user is a person looking to purchase or borrow books.
+- Auth (Login & Register )
+- View all books in the store.
+- View all books in the library.
+- Search for books by name or genre.
+- Filter books by date uploaded, price, and genre.
+- Add books to the lending cart.
+- Add books to the purchasing cart.
+- Checkout books from individual carts.
+- Pay for approved orders.
+- Initiate a return requests (For books that were lent out)
+- View a list of all previous purchases and lendings.
+
+# Technologies used
+
+- Ruby on Rails
+- React
+- CSS
+
+# Authors
+
+- This project was contributed to by:
+
+- [Kennedy Icika](https://github.com/Icika-max)
+- [Martin Ntwiga](https://github.com/ntwigamartin)
+- [Dorothy Jebet](https://github.com/DOROTHY2322)
+- [Munah Hassan](https://github.com/MUNAH10)
+- [Feisal Bireh](https://github.com/Feisalbireh)
+
+### MIT License (ISC)
+
+[![License: ICL](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/)
+
