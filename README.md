@@ -130,4 +130,4 @@
 
 - MIT License
 
-Copyright (c) 2023 KennedyIcika,MartinNtwiga,DorothyJebet,Munahassan,FeisalBireh
+Copyright (c) 2023 
