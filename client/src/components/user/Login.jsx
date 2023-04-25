@@ -27,7 +27,7 @@ export default function Login() {
       if (res.ok) {
         navigate('/home');
         setIsLoggedIn(true);
-        setMessage(res.json)
+        setMessage(res.json())
       }
     })
     .catch(error=>{
