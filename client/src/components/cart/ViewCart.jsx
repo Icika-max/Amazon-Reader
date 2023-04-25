@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Nav from "../Nav";
 
 function ViewCart({carts, onRemoveItem}) {
     
@@ -9,6 +10,7 @@ function ViewCart({carts, onRemoveItem}) {
     });
     return (
         <>
+        <Nav></Nav>
             <div className="book-image-container">
                 {carts.map((cart)=>
                     <div key={cart.id} className="book-image">

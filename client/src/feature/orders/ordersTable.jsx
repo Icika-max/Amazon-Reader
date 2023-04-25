@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchOrders, addOrder, deleteOrder, updateOrder } from './orderslice';
 import './orders.css';
+import Nav from '../../components/Nav';
 
 function OrderTable() {
   const dispatch = useDispatch();
@@ -83,6 +84,7 @@ function OrderTable() {
   };
 
   return (
+    <>
     <div className="order-container">
       <h1 className="order-heading">Orders Table</h1>
       <form className="order-form" onSubmit={handleFormSubmit}>
@@ -108,6 +110,7 @@ function OrderTable() {
 {renderPagination()}
 </div>
 </div>
+</>
 );
 }
 

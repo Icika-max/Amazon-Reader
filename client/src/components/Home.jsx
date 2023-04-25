@@ -1,6 +1,6 @@
 import React from "react";
 import Admin from './Admin';
-import Nav from './Nav';
+// import Nav from './Nav';
 import HomePage from "./HomePage";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BookTable from "../feature/books/BooksTable";
@@ -18,7 +18,7 @@ const Home = () => {
     return ( 
         
       <BrowserRouter>
-        <Nav></Nav>
+        {/* <Nav></Nav> */}
         <Routes>
           <Route path='/admin' element={<Admin></Admin>}>Admin</Route>
           <Route path='/home' element={<HomePage></HomePage>}>Home</Route>
