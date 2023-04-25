@@ -75,9 +75,9 @@ export default function Register() {
       <h2>Register</h2>
 
           <form className="register-form" onSubmit={handleSubmit} >
-          <label htmlFor="username">Full name</label>
+          <label htmlFor="username">Username</label>
 
-            <input placeholder="Enter full name" type="text" name="username" value={username} onChange={handleInputChange} />
+            <input placeholder="Enter Username" type="text" name="username" value={username} onChange={handleInputChange} />
             <label htmlFor="email">email</label>
 
             <input placeholder="Enter your email" type="email" name="email" value={email} onChange={handleInputChange} />
