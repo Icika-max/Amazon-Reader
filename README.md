@@ -51,44 +51,42 @@
 
 - Run and install our dependency gems in the Gemfile in the terminal:
 
-```bash
-bundle install
-```
+        - bundle install
+
 
 - Run the migrations:
 
-```bash
-rails db:migrate
-```
+
+        - rails db:migrate
+
 
 - Seed the database data:
 
-```bash
-rails db:seed
-```
+
+        - rails db:seed
+
 
 - Run the server:
 
-```bash
-rails s
-```
+
+        - rails s
+
 
 ## React Set-up
 
 - To set up the React frontend, install the dependencies:
 
-```bash
-npm install --prefix client
-```
+
+        - npm install --prefix client
+
 
 - Run the server:
 
-```bash
-npm start --prefix client
+        - npm start --prefix client
 
 # User Stories
 
-Admin
+# Admin
 - An administrator acts as the overload of the entire bookstore. The following are functionalities executed by the administrator.
 - Auth
 - Add a new book to the store.
@@ -97,7 +95,7 @@ Admin
 - Approve / Reject all book lending requests.
 - View all books in the store and library.
 
-#User
+# User
 - A user is a person looking to purchase or borrow books.
 - Auth (Login & Register )
 - View all books in the store.
