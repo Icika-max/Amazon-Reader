@@ -1,23 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { fetchBooks } from './booksslice';
 import { fetchBooks } from './bookslice';
+
 
 const LibraryBooks = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books.list);
+  
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
-  // if (status === 'loading') {
-  //   return <p>Loading...</p>;
-  // }
-
-  // if (status === 'failed') {
-  //   return <p>{error}</p>;
-  // }
-console.log(books)
   const storeBooks = books.filter(book => book.location === 'library');
 
   const handleAddToCart = async (id, price) => {
@@ -40,25 +33,24 @@ console.log(books)
       console.log(error);
     }
   };
-
   
-  
-
   return (
     <div className='library-container'>
       <h2 className='library-heading'>Library Books</h2>
-      <ul>
+      <ul className='book-list'>
         {storeBooks.map(book => (
-          <li key={book.id}>
-            <img src={book.image_url} alt={`${book.title} cover`} />
-            <h3>{book.title}</h3>
-            <p>{book.author}</p>
-            <p>{book.description}</p>
-            <p>{book.genre}</p>
-            {/* <p>{book.price}</p> */}
-        
-            <button onClick={() => {handleAddToCart(book.id, book.price)}}>Add To Cart</button>
-
+          <li key={book.id} className='book-item'>
+            <div className='book-image-container'>
+              <img src={book.image_url} alt={`${book.title} cover`} className='book-image' />
+            </div>
+            <div className='book-details'>
+              <h3 className='book-title'>{book.title}</h3>
+              <p className='book-author'>{book.author}</p>
+              <p className='book-description'>{book.description}</p>
+              <p className='book-genre'>{book.genre}</p>
+              <p className='book-price'>${book.price}</p>
+              <button className='add-to-cart-btn' onClick={() => {handleAddToCart(book.id, book.price)}}>Add To Cart</button>
+            </div>
           </li>
         ))}
       </ul>

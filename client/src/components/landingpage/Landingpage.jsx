@@ -32,7 +32,7 @@ const LandingPage =()=> {
       <div className='background-img'></div>
 
       <div className="card-container">
-      <img src="background-5.jpg" alt="Amaazon Reader" className="logo" />
+      {/* <img src="background-5.jpg" alt="Amaazon Reader" className="logo" /> */}
       
         <h1 className="welcome-message">Welcome To Amazon-Reader</h1>
         <p>We are an online bookstore and library, where you can purchase and borrow books from our vast collection, Your one-stop-shop for books,and more!</p>
