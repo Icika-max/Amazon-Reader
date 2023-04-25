@@ -38,17 +38,13 @@ export default function Login() {
     })
   };
   return (
-    <center className="mt-5 ">
-      <div className="bckg">
-        <div className="img">
-        <img src="background-2.jpg"/>
-        </div>
-      <div className="sign_in">
-        <form onSubmit={handleLogin}>
-          <div className="card " style={{ width: "10rem" ,height:"53vh" }}>
-            <div className="card-body ">
+      <div className="auth-form-container">
+        <h2>Login</h2>
+     
+        <form className="login-forrm" onSubmit={handleLogin}>
+        
             <label htmlFor="usernameOrEmail">Username</label>
-                <br />
+                
                 <input
                   type="text"
                   placeholder="ENTER YOUR USERNAME OR EMAIL"
@@ -62,17 +58,17 @@ export default function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <br />
-              <center>
+            
+              
                 <button type="submit" disabled={isLoggingIn}>
                   {isLoggingIn ? "LoggingIn..." : "LOGIN"}
                 </button>
-                <br />
+                
                 <div>
                   {message && <p>{message}</p>}
                   {error && <p>{error}</p>}
                 </div>
-                <br />
+                
                 <p>
                   Not a member?{" "}
                   <NavLink
@@ -83,12 +79,11 @@ export default function Login() {
                     Register
                   </NavLink>
                 </p>
-              </center>
-            </div>
-          </div>
+            
+           
         </form>
       </div>
-      </div>
-    </center>
+ 
+  
   );
 }
