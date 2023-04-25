@@ -554,7 +554,7 @@ td.view-image img {
 }
 
 .nav {
-  background-color: #333;
+  background-color: #aea6a6;
   color: #fff;
   padding: 1rem;
   display: flex;
@@ -590,7 +590,7 @@ td.view-image img {
   color: #333;
 } */
 .nav {
-  background-color: #333;
+  background-color: #bab3b3;
   color: #fff;
   padding: 1rem;
 }
@@ -860,7 +860,7 @@ p {
   margin-bottom: 2600px;
   font-size: 32px;
 }
-.right{
+/* .right{
   margin-left: 1000px;
-}
+} */
 
