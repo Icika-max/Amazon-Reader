@@ -3,7 +3,7 @@
 
 # Description
 
-- This is a rails and react.js application for an online ookstore that servers both as a library and a store.
+- This is a rails and react.js application for an online bookstore that serves both as a library and a store.
 
 # Getting  Started
 
@@ -126,3 +126,8 @@
 - [Feisal Bireh](https://github.com/Feisalbireh)
 
 
+# License
+
+- MIT License
+
+Copyright (c) 2023 KennedyIcika,MartinNtwiga,DorothyJebet,Munahassan,FeisalBireh
