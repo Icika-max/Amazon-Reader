@@ -86,18 +86,18 @@ npm install --prefix client
 ```bash
 npm start --prefix client
 
-## User Stories
+# User Stories
 
 Admin
 - An administrator acts as the overload of the entire bookstore. The following are functionalities executed by the administrator.
-# Auth
+- Auth
 - Add a new book to the store.
 - Update and delete a book from the store.
 - Approve / Reject all book orders (purchases).
 - Approve / Reject all book lending requests.
 - View all books in the store and library.
 
-## User
+#User
 - A user is a person looking to purchase or borrow books.
 - Auth (Login & Register )
 - View all books in the store.
@@ -127,7 +127,4 @@ Admin
 - [Munah Hassan](https://github.com/MUNAH10)
 - [Feisal Bireh](https://github.com/Feisalbireh)
 
-### MIT License (ISC)
-
-[![License: ICL](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/)
 
