@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Login.css"
-
-
 export default function Login() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -11,10 +9,7 @@ export default function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const navigate = useNavigate()
-  
-
   // const history = useHistory();
-
   const handleLogin = (e) => {
     e.preventDefault();
     setIsLoggingIn(true);
@@ -42,19 +37,14 @@ export default function Login() {
       setIsLoggingIn(false);
     })
   };
-
-
   return (
     <center className="mt-5 ">
       <div className="bckg">
-        
         <div className="img">
         <img src="background-2.jpg"/>
         </div>
-
       <div className="sign_in">
         <form onSubmit={handleLogin}>
-          
           <div className="card " style={{ width: "10rem" ,height:"53vh" }}>
             <div className="card-body ">
             <label htmlFor="usernameOrEmail">Username</label>
@@ -83,7 +73,6 @@ export default function Login() {
                   {error && <p>{error}</p>}
                 </div>
                 <br />
-
                 <p>
                   Not a member?{" "}
                   <NavLink
@@ -94,7 +83,6 @@ export default function Login() {
                     Register
                   </NavLink>
                 </p>
-        
               </center>
             </div>
           </div>

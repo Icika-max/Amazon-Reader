@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import './Payment.css'
 import ViewPayment from "./ViewPayment";
+import Nav from "../Nav";
+
 
 function Payment() {
     const [orders, setOrders] = useState([])
@@ -68,7 +70,10 @@ function Payment() {
     }
     
     return (
+        <div>
+        <Nav></Nav>
         <ViewPayment orders={orders} onCompletePurchase={handlePurchase} />
+        </div>
     )
 }
 

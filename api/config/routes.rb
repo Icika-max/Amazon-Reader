@@ -37,7 +37,7 @@ Rails.application.routes.draw do
    post '/admin/signup', to: 'admins#register'
   
 
-   # Routes for AuthenticationController
+  #  Routes for AuthenticationController
    post '/create_account', to: 'authentication#create_account'
    post '/login_account', to: 'authentication#login_account'
    delete '/logout_account', to: 'authentication#logout_account'

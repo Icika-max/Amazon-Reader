@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks } from './bookslice';
+import Nav from '../../components/Nav';
 
 
 const LibraryBooks = () => {
@@ -35,6 +36,8 @@ const LibraryBooks = () => {
   };
   
   return (
+    <>
+    <Nav></Nav>
     <div className='library-container'>
       <h2 className='library-heading'>Library Books</h2>
       <ul className='book-list'>
@@ -55,6 +58,7 @@ const LibraryBooks = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 

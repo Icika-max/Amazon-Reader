@@ -3,13 +3,19 @@ import React from "react";
 // import OrderTable from "../feature/orders/ordersTable";
 // import LendingTable from "../feature/lendings/lendingTable";
 import Navbar from "./Navbar";
+import Nav from './Nav';
+
 
 
 
 const Admin = () => {
     return (
+        <>
+        <Nav></Nav>
         <div>
             <h1 className='admin-header'>Admin Dashboard</h1>
+           
+
             <Navbar></Navbar>
 
             
@@ -20,6 +26,7 @@ const Admin = () => {
     
 
         </div>
+        </>
       );
 }
  
