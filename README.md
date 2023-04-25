@@ -17,7 +17,7 @@
 
 - To use this repo on your machine requires some simple steps
 
-# Alternative One
+#### Alternative One
 
 - Open a terminal / command line interface on your computer
 
@@ -47,3 +47,41 @@
 
         - git@github.com:Icika-max/Amazon-Reader.git
 
+# Project SetUp
+
+- Run and install our dependency gems in the Gemfile in the terminal:
+
+```bash
+bundle install
+```
+
+- Run the migrations:
+
+```bash
+rails db:migrate
+```
+
+- Seed the database data:
+
+```bash
+rails db:seed
+```
+
+- Run the server:
+
+```bash
+rails s
+```
+
+## React Set-up
+
+- To set up the React frontend, install the dependencies:
+
+```bash
+npm install --prefix client
+```
+
+- Run the server:
+
+```bash
+npm start --prefix client
