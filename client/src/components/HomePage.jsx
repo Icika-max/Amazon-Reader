@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 // import Admin from './Admin';
-// import Nav from './Nav';
+import Nav from './Nav';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function HomePage() {
@@ -31,6 +31,8 @@ function HomePage() {
   const filteredBooks = selectedGenre !== '' ? books.filter(book => book.genre === selectedGenre) : books;
 
   return (
+    <>
+    <Nav></Nav>
     <div className='home-container'>
       <div className='hm-container'>
       <div id='search-bar'>
@@ -89,6 +91,7 @@ function HomePage() {
       </div>
      
     </div>
+    </>
   );
 }
 

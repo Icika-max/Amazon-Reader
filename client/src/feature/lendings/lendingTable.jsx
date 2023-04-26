@@ -6,6 +6,7 @@ import {
   deleteLending,
   updateLending,
 } from './lendingslice';
+import Nav from '../../components/Nav';
 
 function LendingTable() {
   const dispatch = useDispatch();
@@ -87,6 +88,8 @@ function LendingTable() {
   }
 
   return (
+    <>
+    <Nav></Nav>
     <div className='lending-container'>
       <h1 className='leading-heading'>Lendings Table</h1>
       <form className='leading-form' onSubmit={handleFormSubmit}>
@@ -110,6 +113,7 @@ function LendingTable() {
 </table>
 <ul className='page-numbers'>{renderPageNumbers}</ul>
 </div>
+</>
 );
 }
 

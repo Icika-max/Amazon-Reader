@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks } from './bookslice';
+import Nav from '../../components/Nav';
 
 // const userId = useSelector((state) => state.user.id);
 
@@ -36,13 +37,17 @@ const StoreBooks = () => {
   };
 
   return (
+    <>
+    <Nav></Nav>
     <div className='store-container'>
       <div className='str'>
       <h2 className='store-heading'>Store Books</h2>
       <ul>
+      <div className='book-grid'>
+
         {storeBooks.map((book) => (
-          <li key={book.id}>
-            <img src={book.image_url} alt={`${book.title} cover`} />
+          <li className='book-card' key={book.id}>
+            <img className='book-item img' src={book.image_url} alt={`${book.title} cover`} />
 
             <h3>{book.title}</h3>
             <p>{book.author}</p>
@@ -52,9 +57,11 @@ const StoreBooks = () => {
             <button className='add-cart-btn' onClick={() => {handleAddToCart(book.id, book.price)}}>Add To Cart</button>
           </li>
         ))}
+        </div>
       </ul>
     </div>
     </div>
+    </>
   );
 };
 

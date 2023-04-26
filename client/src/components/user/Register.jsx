@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
 export default function Register() {
@@ -9,7 +9,7 @@ export default function Register() {
   const [error, setError] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [cachedResponse, setCachedResponse] = useState({});
-
+  const navigate = useNavigate();
   // function Loading() {
   //   return <div>Loading...</div>;
   // }
@@ -29,22 +29,23 @@ export default function Register() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
     setIsRegistering(true);
     if (username in cachedResponse) {
       const data = cachedResponse[username];
       if (data.message) {
-        window.location.href = "/Login"; // redirect to login page
-        return;
+        navigate('/login')
+        // window.location.href = "/login"; // redirect to login page
+        // return;
       } else {
         setError(data.errors);
         setIsRegistering(false);
-        return;
+        // return;
       }
     }
-    const response = await fetch("http://127.0.0.1:3000/users", {
+    fetch("http://127.0.0.1:3000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,15 +55,17 @@ export default function Register() {
         email,
         password,
       }),
-    });
-    const { message, errors } = await response.json();
-    if (message) {
-      window.location.href = "/Login"; // redirect to login page
-    } else {
-      setError(errors);
+    })
+    .then(res=>{
+      if(res.ok){
+        navigate('/login')
+      }
+    })
+    .catch( error =>{
+      setError(error);
       setIsRegistering(false);
-    }
-    setCachedResponse({ ...cachedResponse, [username]: { message, errors } });
+    })
+    setCachedResponse({ ...cachedResponse, [username]: { message, error } });
   };
   return (
     
@@ -73,15 +76,9 @@ export default function Register() {
       <h2>Register</h2>
 
           <form className="register-form" onSubmit={handleSubmit} >
-          <label htmlFor="username">Full name</label>
+          <label htmlFor="username">Username</label>
 
-      <div className="d-flex flex-column mb-3" style={{ width: "20rem", margin: "0 auto" }}>
-
-        <div className="card">
-          <form onSubmit={handleSubmit} className="d-flex flex-column mb-3">
-            <h1>Register</h1>
-            <label>Username</label>
-            <input placeholder="Enter full name" type="text" name="username" value={username} onChange={handleInputChange} />
+            <input placeholder="Enter Username" type="text" name="username" value={username} onChange={handleInputChange} />
             <label htmlFor="email">email</label>
 
             <input placeholder="Enter your email" type="email" name="email" value={email} onChange={handleInputChange} />
@@ -90,7 +87,7 @@ export default function Register() {
 
         
             <input type="password" name="password" value={password} onChange={handleInputChange} />
-            <button type="submit">{isRegistering ? "Registering..." : "Register"}</button>
+            <button type="submit" onSubmit={()=>handleSubmit(e)}>{isRegistering ? "Registering..." : "Register"}</button>
 
             <p>
               Already a member? <Link to="/login">Login</Link>

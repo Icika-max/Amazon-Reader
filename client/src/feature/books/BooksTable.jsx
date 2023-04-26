@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks, addBook, deleteBook, updateBook } from './bookslice';
 // import './BookTable.css';
+import Nav from '../../components/Nav';
 
 function BookTable() {
   const dispatch = useDispatch();
@@ -45,6 +46,8 @@ function BookTable() {
   };
 
   return (
+    <>
+    <Nav></Nav>
     <div className="book-container">
       <div className="book-left">
         <h1 className="heading">Books Table</h1>
@@ -97,6 +100,7 @@ function BookTable() {
                                                                                                                                                                                                                           </table>
       </div>
     </div>
+    </>
   );
 }
 export default BookTable;
