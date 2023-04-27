@@ -89,8 +89,9 @@ function LendingTable() {
 
   return (
     <>
-    <Nav></Nav>
+   
     <div className='lending-container'>
+    <Nav></Nav>
       <h1 className='leading-heading'>Lendings Table</h1>
       <form className='leading-form' onSubmit={handleFormSubmit}>
         <input type="number" name="user_id" value={formData.user_id || ''} onChange={handleFormChange} placeholder='User-id' />

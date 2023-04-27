@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username]) || User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      render json: user, status: :created
-      
+      render json: { user: user, session_id: session.id }, status: :created
     else
       render json: { error: 'user not found' }, status: :not_found
     end
   end
+  
   
 
    # DELETE /logout

@@ -86,6 +86,7 @@ function OrderTable() {
   return (
     <>
     <div className="order-container">
+    <Nav></Nav>
       <h1 className="order-heading">Orders Table</h1>
       <form className="order-form" onSubmit={handleFormSubmit}>
         <input type="number" name="user_id" value={formData.user_id || ''} onChange={handleFormChange} placeholder="User id" />
