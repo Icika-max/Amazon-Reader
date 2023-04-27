@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
   
   def show 
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     render json: @user, include: { roles: { only: :name } }, status: :ok
   end
   

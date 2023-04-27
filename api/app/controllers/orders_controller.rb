@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1
   def show
+    orders = Order.all
     render json: @order
   end
 

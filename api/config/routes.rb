@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resources :user_roles
   resources :roles
 
-  resources :lendings
-  resources :orders
-  resources :users
+  # resources :lendings
+  # resources :orders
+  # resources :users
 
   #books
   resources :books, only: [:index, :show, :create, :update, :destroy]
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     post '/users', to: 'users#create'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
+    get '/me', to: 'users#show'
 
    #admin_sessions
    post 'admin/login', to: 'admin_sessions#create'
