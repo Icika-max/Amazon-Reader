@@ -4,7 +4,8 @@ class OrdersController < ApplicationController
 
   # GET /orders
   def index
-    @orders = Order.all
+    @orders = Order.all 
+    # .where(user_id: session[:user_id])
 
 
 
@@ -14,6 +15,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1
   def show
+    orders = Order.all
     render json: @order
   end
 

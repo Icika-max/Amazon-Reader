@@ -13,6 +13,9 @@ import Payment from "./payment/Payment";
 import LandingPage from "./landingpage/Landingpage";
 import Register from "./user/Register";
 import Login from "./user/Login";
+import Account from "./profile/Account";
+import PurchaseHistory from "./profile/PurchaseHistory";
+import LendingHistory from "./profile/LendingHistory";
 
 const Home = () => {
     return ( 
@@ -32,6 +35,9 @@ const Home = () => {
           <Route path='/payment' element={<Payment></Payment>}>Admin</Route>
           <Route path='/register' element={<Register/>}></Route>
           <Route path='/login'element={<Login/>}></Route>
+          <Route path='/my-account' element={<Account />}></Route>
+          <Route path='/purchases' element={<PurchaseHistory/>}></Route>
+          <Route path='/lendings' element={<LendingHistory/>}></Route>
           <Route path='/' element={<LandingPage/>}></Route>
         </Routes>
       

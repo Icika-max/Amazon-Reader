@@ -12,6 +12,7 @@ const Nav = () => {
                     <Link to='/store'>Store</Link>
                     <Link to='/library'>Library</Link>
                     <Link to='/cart'>Cart</Link>
+                    <Link to='/my-account'>Account</Link>
                     {/* <Link to='/login'>Login</Link> */}
                     {/* <Link to='/register'>Register</Link> */}
                     {/* <Link to='/'>LandingPage</Link> */}
