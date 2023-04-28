@@ -140,7 +140,7 @@ body{
   font-style: italic;
 }
 
-#dropdown{
+#genre-filter{
  position: absolute;
  margin-top: 20px;
  margin-left: 800px;
