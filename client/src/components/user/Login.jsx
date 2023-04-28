@@ -31,7 +31,10 @@ export default function Login() {
       }
       return res.json();
     })
-    .then(data=> localStorage.setItem('uid', data.id.toString()))
+    .then(data=> {
+      localStorage.setItem('user', `${data.roles.map(e=>e.name).toString()}|${data.id.toString()}|${data.username.toString()}`);      
+      console.log(data);
+    })
     .catch(error=>{
       setMessage("");
       setError(error);

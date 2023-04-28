@@ -8,7 +8,11 @@ function Account() {
     
     const [purchases, setPurchases] = useState([])
     const [lendings, setLendings] = useState([])
-    const uid = parseInt(localStorage.getItem('uid'));
+    const userString = localStorage.getItem('user');
+    const [role, id] = userString.split('|');
+    const uid = parseInt(id)
+
+    // const uid = parseInt(localStorage.getItem('uid'));
 
     useEffect(() =>{
         fetch(`http://localhost:3000/user_orders/${uid}`)
