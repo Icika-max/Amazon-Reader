@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   margin: 50px;
-  background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+  background-image: url('/background-4.jpg');
+  /* background-image: linear-gradient(79deg, #e7e4ec, #b9b1b8 48%, #e6e2df); */
 
   
 }

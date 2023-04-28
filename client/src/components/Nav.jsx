@@ -19,9 +19,11 @@ const Nav = () => {
     
     
     return (
-        <div className="nav">
+        <div className="vertical-nav">
             <ul className="list">
                 <li>
+                <a>{username1}</a>
+
                     <Link to='/home'>Home</Link>
                     {role === 'admin' && <Link to='/admin'>Admin</Link>}
                    
@@ -30,10 +32,7 @@ const Nav = () => {
                     <Link to='/cart'>Cart</Link>
                     <Link to='/my-account'>Account</Link>
                     {/* <a>Role:{role}</a> */}
-                    {/* <Link to='/login'>Login</Link> */}
-                    {/* <Link to='/register'>Register</Link> */}
-                    {/* <Link to='/'>LandingPage</Link> */}
-                    <a>{username1}</a>
+                    
                     <Link  className="right" to='/' onClick={()=>handleLogout()}>Logout</Link>
                     
 

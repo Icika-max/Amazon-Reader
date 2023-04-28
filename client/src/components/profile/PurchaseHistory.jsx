@@ -1,9 +1,9 @@
 function PurchaseHistory({purchases}) {
     console.log(purchases);
     return (
-        <div>
-            <h2>Purchases History</h2>
-            <table>
+        <div className="purchase-history-container">
+            <h2 className="purchase-history-header">Purchases History</h2>
+            <table className="purchase-history-table">
                 <thead>
                     <tr>
                         <td>Book ID</td>

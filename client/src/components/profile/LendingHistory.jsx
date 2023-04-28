@@ -1,9 +1,9 @@
 function LendingHistory({lendings}) {
     // console.log(lendings);
     return (
-        <div>
-            <h2>Lendings History</h2>
-            <table>
+        <div className="lending-history-container">
+            <h2 className="lending-history-header">Lendings History</h2>
+            <table className="lending-history-table">
                 <thead>
                     <tr>
                         <td>Book ID</td>
