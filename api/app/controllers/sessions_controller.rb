@@ -1,15 +1,26 @@
 class SessionsController < ApplicationController
    # POST /login
-   def create
-    user = User.find_by(username: params[:username]) || User.find_by(email: params[:email])
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-      render json: { user: user, session_id: session.id }, status: :created
-    else
-      render json: { error: 'user not found' }, status: :not_found
-    end
-  end
+  #  def create
+  #   user = User.find_by(username: params[:username]) || User.find_by(email: params[:email])
+  #   if user&.authenticate(params[:password])
+  #     session[:user_id] = user.id
+  #     render json: { user: user, session_id: session.id }, status: :created
+  #   else
+  #     render json: { error: 'user not found' }, status: :not_found
+  #   end
+  # end
   
+  # POST /login
+def create
+  user = User.find_by(username: params[:username]) || User.find_by(email: params[:email])
+  if user&.authenticate(params[:password])
+    session[:user_id] = user.id
+    render json: { user: user }, status: :created
+  else
+    render json: { error: 'Invalid username or password' }, status: :unauthorized
+  end
+end
+
   
 
    # DELETE /logout

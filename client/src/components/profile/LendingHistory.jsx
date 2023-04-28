@@ -1,5 +1,5 @@
 function LendingHistory({lendings}) {
-    console.log(lendings);
+    // console.log(lendings);
     return (
         <div>
             <h2>Lendings History</h2>
