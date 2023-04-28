@@ -45,7 +45,8 @@ Rails.application.routes.draw do
 
  
  
-
+  get '/user_orders/:id', to: 'orders#user_orders'
+  get '/user_lendings/:id', to: 'lendings#user_lendings'
   
   #carts
   resources :carts, only: [:index, :create, :update, :destroy]

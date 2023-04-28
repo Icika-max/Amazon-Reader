@@ -143,7 +143,7 @@ body{
   font-style: italic;
 }
 
-#dropdown{
+#genre-filter{
  position: absolute;
  margin-top: 20px;
  margin-left: 800px;
@@ -257,13 +257,6 @@ body{
   background-color: #0056b3;
 
 } 
-
-
-
-
-
-
-
 
 
 .book-container {
@@ -605,7 +598,7 @@ td.view-image img {
 }
 
 .right {
-  margin-left: 83rem;
+  margin-left: 80rem;
 }
 
 .list li a {

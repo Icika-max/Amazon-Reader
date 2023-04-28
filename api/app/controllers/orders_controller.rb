@@ -1,104 +1,18 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[ show update destroy ]
-  # before_action :authorize_admin, except: [:show,:index, :create]
+  before_action :set_order, only: %i[ show update destroy]
+  before_action :authorize_admin, except: [:show,:index, :create, :user_orders]
 
   # GET /orders
   def index
-    # @orders=Order.all
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @orders = Order.all.where(user_id: session[:user_id])
+    # .where(user_id: session[:user_id])
     render json: @orders
   end
 
   # GET /orders/1
-  def show
-    orders = Order.all
-    render json: @order
+  def user_orders
+    orders = Order.where(user_id: params[:id])
+    render json: orders
   end
 
   # POST /orders
