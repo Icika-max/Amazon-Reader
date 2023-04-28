@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PurchaseHistory from "./PurchaseHistory";
 import LendingHistory from "./LendingHistory";
 import { Link } from 'react-router-dom';
+import Nav from "../Nav";
 
 function Account() {
     
@@ -22,10 +23,12 @@ function Account() {
     
     return (
         <div>
-            <h2>My Account</h2>
-            <PurchaseHistory purchases={purchases}/>
-            <LendingHistory lendings={lendings}/>
-
+            <Nav/>
+            <div>
+                <h2>My Account</h2>
+                <PurchaseHistory purchases={purchases}/>
+                <LendingHistory lendings={lendings}/>
+            </div>
         </div>
     )
 }
