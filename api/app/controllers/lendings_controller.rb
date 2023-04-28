@@ -1,12 +1,17 @@
 class LendingsController < ApplicationController
   before_action :set_lending, only: %i[ show update destroy ]
-  before_action :authorize_admin, except: [:show, :index, :create]
+  before_action :authorize_admin, except: [:show, :index, :create, :user_lendings]
 
   # GET /lendings
   def index
     @lendings = Lending.all
 
     render json: @lendings
+  end
+
+  def user_lendings
+    lendings = Lending.where(user_id: params[:id])
+    render json: lendings
   end
 
   # GET /lendings/1

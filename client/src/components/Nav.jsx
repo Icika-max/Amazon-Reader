@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
+    
+    const handleLogout = () => {
+        localStorage.removeItem('uid');
+    }
+    
+    
     return (
         <div className="nav">
             <ul className="list">
@@ -16,7 +22,7 @@ const Nav = () => {
                     {/* <Link to='/login'>Login</Link> */}
                     {/* <Link to='/register'>Register</Link> */}
                     {/* <Link to='/'>LandingPage</Link> */}
-                    <Link  className="right" to='/'>Logout</Link>
+                    <Link  className="right" to='/' onClick={()=>handleLogout()}>Logout</Link>
                     
 
                    
