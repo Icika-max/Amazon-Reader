@@ -59,6 +59,7 @@ function LendingTable() {
     <tr key={lending.id}>
       <td>{lending.user_id}</td>
       <td>{lending.book_id}</td>
+      <td>{lending.book.title}</td>
       <td>{lending.due_date}</td>
       <td>{lending.status}</td>
       <td>
@@ -95,6 +96,7 @@ function LendingTable() {
       <h1 className='leading-heading'>Lendings Table</h1>
       <form className='leading-form' onSubmit={handleFormSubmit}>
         <input type="number" name="user_id" value={formData.user_id || ''} onChange={handleFormChange} placeholder='User-id' />
+        <input type="text" name="title" value={formData.title || ''} onChange={handleFormChange} placeholder='Title' />
         <input type="number" name="book_id" value={formData.book_id || ''} onChange={handleFormChange} placeholder='Book-id' />
 <input type="date" name="due_date" value={formData.due_date || ''} onChange={handleFormChange} placeholder='Due Date' />
 <input type="text" name="status" value={formData.status || ''} onChange={handleFormChange} placeholder='Status' />
@@ -105,6 +107,7 @@ function LendingTable() {
 <tr>
 <th>User ID</th>
 <th>Book ID</th>
+<th>Title</th>
 <th>Due Date</th>
 <th>Status</th>
 <th>Action</th>

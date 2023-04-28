@@ -26,7 +26,7 @@ admin_role = Role.create!(name: 'admin')
 customer_role = Role.create!(name: 'customer')
 
 # Create users with roles
-40.times do
+3.times do
   user = User.create!(
     username: Faker::Internet.username,
     email: Faker::Internet.email,

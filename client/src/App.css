@@ -259,13 +259,6 @@ body{
 } 
 
 
-
-
-
-
-
-
-
 .book-container {
   display: flex;
   justify-content: space-between;
@@ -605,7 +598,7 @@ td.view-image img {
 }
 
 .right {
-  margin-left: 87rem;
+  margin-left: 80rem;
 }
 
 .list li a {

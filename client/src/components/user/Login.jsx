@@ -4,7 +4,7 @@ import "./Login.css"
 export default function Login() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [error, setError] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -27,13 +27,17 @@ export default function Login() {
       if (res.ok) {
         navigate('/home');
         setIsLoggedIn(true);
-        setMessage(res.json())
+        // setMessage(res.json());
       }
+      return res.json();
+    })
+    .then(data=> {
+      localStorage.setItem('user', `${data.roles.map(e=>e.name).toString()}|${data.id.toString()}|${data.username.toString()}`);      
+      console.log(data);
     })
     .catch(error=>{
       setMessage("");
       setError(error);
-      console.log(error);
       setIsLoggingIn(false);
     })
   };
