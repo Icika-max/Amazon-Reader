@@ -29,10 +29,6 @@ const Nav = () => {
                     <Link to='/library'>Library</Link>
                     <Link to='/cart'>Cart</Link>
                     <Link to='/my-account'>Account</Link>
-                    {/* <a>Role:{role}</a> */}
-                    {/* <Link to='/login'>Login</Link> */}
-                    {/* <Link to='/register'>Register</Link> */}
-                    {/* <Link to='/'>LandingPage</Link> */}
                     <a>{username1}</a>
                     <Link  className="right" to='/' onClick={()=>handleLogout()}>Logout</Link>
                     
