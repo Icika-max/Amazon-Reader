@@ -1,0 +1,31 @@
+
+.admin-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c2237;
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+  
+  .admin-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .admin-list li {
+    margin-right: 1rem;
+  }
+  
+  .admin-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .admin-list li a:hover {
+    text-decoration: underline;
+  }
+  
