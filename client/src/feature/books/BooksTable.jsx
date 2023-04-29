@@ -48,10 +48,10 @@ function BookTable() {
   return (
     <>
     <Nav></Nav>
-    <div className="book-container">
-      <div className="book-left">
-        <h1 className="heading">Books Table</h1>
-        <form className="book-form" onSubmit={handleFormSubmit}>
+    <div className="admin-book-container">
+      <div className="admin-book-left">
+        <h1 className="admin-heading">Books Table</h1>
+        <form className="admin-book-form" onSubmit={handleFormSubmit}>
           <input type="text" name="title" value={formData.title || ''} onChange={handleFormChange} placeholder="Title" />
           <input type="text" name="author" value={formData.author || ''} onChange={handleFormChange} placeholder="Author" />
           <input type="text" name="description" value={formData.description || ''} onChange={handleFormChange} placeholder="Description" />
@@ -64,7 +64,7 @@ function BookTable() {
           <button type="submit">{editing ? 'Update Book' : 'Add Book'}</button>
         </form>
       </div>
-      <div className="book-right">
+      <div className="admin-book-right">
        <table className="book-table">
   <thead>
     <tr>
