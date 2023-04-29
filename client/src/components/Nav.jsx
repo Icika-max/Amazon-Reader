@@ -26,12 +26,10 @@ const Nav = () => {
 
                     <Link to='/home'>Home</Link>
                     {role === 'admin' && <Link to='/admin'>Admin</Link>}
-                   
                     <Link to='/store'>Store</Link>
                     <Link to='/library'>Library</Link>
                     <Link to='/cart'>Cart</Link>
                     <Link to='/my-account'>Account</Link>
-                    <a>{username1}</a>
                     <Link  className="right" to='/' onClick={()=>handleLogout()}>Logout</Link>
                     
 
