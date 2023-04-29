@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
 
-
-
-
 const API_URL = 'http://localhost:3000/books';
 
 function HomePage() {
@@ -38,6 +35,14 @@ function HomePage() {
     (selectedGenre === '' || book.genre === selectedGenre)
   ));
 
+  const getStarRating = (rating) => {
+    let stars = '';
+    for (let i = 0; i < rating; i++) {
+      stars += '⭐️';
+    }
+    return stars;
+  }
+
   return (
     <>
       <Nav />
@@ -66,10 +71,9 @@ function HomePage() {
                   <h3>{book.title}</h3>
                   <p className='book-author'>{book.author}</p>
                   <p className='book-description'>{book.description}</p>
-                  <p className='book-rating'>{book.rating}</p>
+                  <p className='book-rating'>{getStarRating(book.rating)}</p>
                   <p className='book-genre'>{book.genre}</p>
-                  <p className='book-price'>{book.price}</p>
-                  {/* <p className='book-location'>{book.location}</p> */}
+                 
                 </Link>
               ))}
             </div>

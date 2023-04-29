@@ -5,7 +5,7 @@
 }
 
 
-/* Container for the search bar and filters */
+
 .hm-container {
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +13,6 @@
   margin-top: 50px;
 }
 
-/* Search bar */
 #search-bar {
   display: flex;
   margin-left: 900px;
@@ -34,11 +33,11 @@
 
 .search-button {
   width: 40%;
-  background-color: #3f51b5;
+  background-color: #2e3756;
   color: #fff;
   padding: 10px;
   font-size: 18px;
-  border: 1px solid #3f51b5;
+  border: 1px solid #2e3756;
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -48,11 +47,11 @@
 
 .search-button:hover {
   background-color: #fff;
-  color: #3f51b5;
+  color:#2e3756;
 }
 
 
-/* Genre filter */
+
 #genre-filter {
   width: 10%;
   padding: 10px;
@@ -60,13 +59,14 @@
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: 
+ #c1c1c1;
   position: absolute;
   top: 50px;
   right: 500px;
 }
 
-/* Featured books */
+
 .featured-books {
   width: 100%;
 }
@@ -79,12 +79,13 @@
 }
 
 
-/* Book grid */
+
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 30px;
   justify-items: center;
+  
 }
 
 .book-card {
@@ -144,7 +145,7 @@
   10px;
 }
 
-/* Pagination */
+
 .pagination {
 display: flex;
 justify-content: center;
@@ -212,58 +213,60 @@ border-color: #3f51b5;
   background-color: #333;
   color: #fff;
 }
-/* Set the font family and size for the entire page */
+
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
 
 .navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  height: 100%;
+  background-color: #242526;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 200px;
-  padding: 20px;
-  background-color: 
-  #c1c1c1;
-}
-
-.navbar-item {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 5px 0;
-  padding: 10px;
-}
-
-
-.navbar-start {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  padding-top: 1rem;
 }
 
 .navbar-item {
+  color: #dadce1;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  color: #333;
-  margin-bottom: 10px;
+  padding: 0.75rem 1rem;
   text-decoration: none;
+  transition: background-color 0.2s;
 }
 
 .navbar-item:hover {
-  color: #666;
+  background-color: #3a3b3c;
 }
 
-.navbar-item span {
-  margin-left: 10px;
+.navbar-item.active {
+  background-color: #3a3b3c;
 }
 
+.navbar-logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.navbar-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.navbar-end .button {
+  margin: 0.5rem;
+  width: 80%;
+}
 .buttons {
   display: flex;
   align-items: center;
@@ -275,7 +278,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
-  background-color: #ff3860;
+  background-color: #2e3756;
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -285,14 +288,14 @@ body {
 }
 
 .button:hover {
-  background-color: #e52e54;
+  background-color: #2e3756;
 }
 
 .button span {
   margin-left: 10px;
 }
 
-/* Style for StoreBooks component */
+
 .store-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -352,7 +355,7 @@ body {
 .store-book-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Use object-fit to control how the image is resized */
+  object-fit: cover; 
 }
 
 .store-book-details {
@@ -408,7 +411,7 @@ body {
 .store-add-to-cart-btn:hover {
   background-color: #555;
 }
-/* LibraryBooks Component */
+
 .library-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -423,9 +426,6 @@ body {
 }
 
 .library-book-grid {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 30px;
@@ -609,10 +609,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   justify-items: auto;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem; */
+ 
 }
 
 .payment-order-image-container {
@@ -761,14 +758,9 @@ body {
 }
 
 .purchase-history-container {
-  background-color: #f2f2f2;
   border: 1px solid #ccc;
-  border-radius: 5px;
   padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  justify-items: auto;
+  margin-top: 20px;
 }
 
 .purchase-history-header {
@@ -781,34 +773,29 @@ body {
   width: 100%;
 }
 
-.purchase-history-table td,
-.purchase-history-table th {
-  border: 1px solid #ddd;
-  padding: 8px;
+.purchase-history-table th,
+.purchase-history-table td {
+  padding: 10px;
   text-align: left;
+  border-bottom: 1px solid #ccc;
 }
 
 .purchase-history-table th {
-  background-color: #f2f2f2;
   font-weight: bold;
 }
 
 .purchase-history-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
 }
 
 .purchase-history-table tr:hover {
   background-color: #ddd;
 }
+
 .lending-history-container {
-  background-color: #f2f2f2;
   border: 1px solid #ccc;
-  border-radius: 5px;
   padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  justify-items: auto;
+  margin-top: 20px;
 }
 
 .lending-history-header {
@@ -821,26 +808,25 @@ body {
   width: 100%;
 }
 
-.lending-history-table td,
-.lending-history-table th {
-  border: 1px solid #ddd;
-  padding: 8px;
+.lending-history-table th,
+.lending-history-table td {
+  padding: 10px;
   text-align: left;
+  border-bottom: 1px solid #ccc;
 }
 
 .lending-history-table th {
-  background-color: #f2f2f2;
   font-weight: bold;
 }
 
 .lending-history-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
 }
 
 .lending-history-table tr:hover {
   background-color: #ddd;
 }
-/* Style for the book table container */
+
 .book-container {
   display: flex;
   flex-direction: row;
@@ -849,7 +835,7 @@ body {
   margin: 20px;
 }
 
-/* Style for the left side of the book table container */
+
 .book-left {
   display: flex;
   flex-direction: column;
@@ -857,13 +843,13 @@ body {
   width: 50%;
 }
 
-/* Style for the heading of the book table */
+
 .heading {
   font-size: 30px;
   margin: 20px 0;
 }
 
-/* Style for the book form */
+
 .book-form {
   display: flex;
   flex-direction: column;
@@ -871,7 +857,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Style for the book form inputs */
 .book-form input {
   margin: 5px;
   padding: 5px;
@@ -880,7 +865,7 @@ body {
   border-bottom: 2px solid gray;
 }
 
-/* Style for the book form button */
+
 .book-form button {
   margin: 10px;
   padding: 10px;
@@ -892,13 +877,13 @@ body {
   cursor: pointer;
 }
 
-/* Style for the book table */
+
 .book-table {
   border-collapse: collapse;
   width: 100%;
 }
 
-/* Style for the book table header */
+
 .book-table th {
   background-color: #3f51b5;
   color: white;
@@ -907,14 +892,14 @@ body {
   border: 1px solid black;
 }
 
-/* Style for the book table data */
+
 .book-table td {
   padding: 10px;
   text-align: left;
   border: 1px solid black;
 }
 
-/* Style for the book table actions buttons */
+
 .book-table td button {
   margin: 5px;
   padding: 5px 10px;
@@ -925,7 +910,7 @@ body {
   cursor: pointer;
 }
 
-/* Style for the book table image */
+
 .view-image img {
   max-width: 100px;
   height: auto;
