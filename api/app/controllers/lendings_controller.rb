@@ -4,7 +4,8 @@ class LendingsController < ApplicationController
 
   # GET /lendings
   def index
-    @lendings = Lending.all
+    # @lending = Lending.all
+    @lendings = Lending.all.where(user_id: session[:user_id])
 
     render json: @lendings
   end

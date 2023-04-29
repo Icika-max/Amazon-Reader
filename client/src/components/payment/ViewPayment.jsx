@@ -9,7 +9,7 @@ function ViewPayment({orders, onCompletePurchase}) {
     
     return (
         <div className="payments-main" >
-            <div className="order-image-container" >
+            <div className="payment-order-image-container" >
                 {orders.map((order)=>
                     <div key={order.id}>
                         <img src={order.book.image_url} alt="Image Loading..."/>

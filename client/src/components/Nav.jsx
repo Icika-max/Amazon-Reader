@@ -19,9 +19,11 @@ const Nav = () => {
     
     
     return (
-        <div className="nav">
+        <div className="vertical-nav">
             <ul className="list">
                 <li>
+                <a>{username1}</a>
+
                     <Link to='/home'>Home</Link>
                     {role === 'admin' && <Link to='/admin'>Admin</Link>}
                    

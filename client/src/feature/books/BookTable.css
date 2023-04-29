@@ -1,0 +1,80 @@
+.admin-book-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .admin-book-left {
+    position: relative;
+    width: 50%;
+    padding: 0 20px;
+  }
+  
+  .admin-book-right {
+    width: 50%;
+    padding: 0 20px;
+  }
+  
+  .book-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .book-table th,
+  .book-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .book-table th {
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .book-table td.view-image {
+    width: 20%;
+    text-align: center;
+  }
+  
+  .book-table td.view-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .admin-heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .admin-book-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
+  
+  .admin-book-form input,
+  .admin-book-form button {
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .admin-book-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin-book-form button:hover {
+    background-color: #3e8e41;
+  }
+  

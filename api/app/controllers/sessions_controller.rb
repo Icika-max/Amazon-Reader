@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       render json: { error: 'user not found' }, status: :not_found
     end
   end
-  
+end
+
   
 
    # DELETE /logout
