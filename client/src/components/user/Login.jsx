@@ -78,12 +78,11 @@ export default function Login() {
                 <p>
                   Not a member?{" "}
                   <NavLink
-                    to="/register"
-                    className="link"
-                    style={{ color: "red" }}
-                  >
-                    Register
-                  </NavLink>
+  to="/register"
+  className="link-to-register"
+>
+  Register
+</NavLink>
                 </p>
             
            

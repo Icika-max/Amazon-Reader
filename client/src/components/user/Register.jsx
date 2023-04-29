@@ -10,9 +10,6 @@ export default function Register() {
   const [isRegistering, setIsRegistering] = useState(false);
   const [cachedResponse, setCachedResponse] = useState({});
   const navigate = useNavigate();
-  // function Loading() {
-  //   return <div>Loading...</div>;
-  // }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,13 +33,10 @@ export default function Register() {
     if (username in cachedResponse) {
       const data = cachedResponse[username];
       if (data.message) {
-        navigate('/login')
-        // window.location.href = "/login"; // redirect to login page
-        // return;
+        navigate("/login");
       } else {
         setError(data.errors);
         setIsRegistering(false);
-        // return;
       }
     }
     fetch("http://127.0.0.1:3000/users", {
@@ -56,43 +50,72 @@ export default function Register() {
         password,
       }),
     })
-    .then(res=>{
-      if(res.ok){
-        navigate('/login')
-      }
-    })
-    .catch( error =>{
-      setError(error);
-      setIsRegistering(false);
-    })
+      .then((res) => {
+        if (res.ok) {
+          navigate("/login");
+        }
+      })
+      .catch((error) => {
+        setError(error);
+        setIsRegistering(false);
+      });
     setCachedResponse({ ...cachedResponse, [username]: { message, error } });
   };
+
   return (
     <div className="auth-form-container">
-      {/* <div>
-        <img src="background-3.jpg" />
-      </div> */}
-      <h2>Register</h2>
-
-          <form className="register-form" onSubmit={handleSubmit} >
-          <label htmlFor="username">Username</label>
-
-            <input placeholder="Enter Username" type="text" name="username" value={username} onChange={handleInputChange} />
-            <label htmlFor="email">email</label>
-
-            <input placeholder="Enter your email" type="email" name="email" value={email} onChange={handleInputChange} />
-            {isRegistering }
-            <label htmlFor="password">password</label>
-
-        
-            <input type="password" name="password" value={password} onChange={handleInputChange} />
-            <button type="submit" onSubmit={()=>handleSubmit(e)}>{isRegistering ? "Registering..." : "Register"}</button>
-
-            <p>
-              Already a member? <Link to="/login">Login</Link>
-            </p>
-            {error && <p>{error}</p>}
-          </form>
+      <h2 className="auth-form-heading">Register</h2>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="auth-form-field">
+          <label htmlFor="username" className="auth-form-label">
+            Username
+          </label>
+          <input
+            placeholder="Enter Username"
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleInputChange}
+            className="auth-form-input"
+          />
         </div>
+        <div className="auth-form-field">
+          <label htmlFor="email" className="auth-form-label">
+            Email
+          </label>
+          <input
+            placeholder="Enter your email"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleInputChange}
+            className="auth-form-input"
+          />
+        </div>
+        <div className="auth-form-field">
+          <label htmlFor="password" className="auth-form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+            className="auth-form-input"
+          />
+        </div>
+        <button
+          type="submit"
+          onSubmit={() => handleSubmit(e)}
+          className="auth-form-button"
+        >
+          {isRegistering ? "Registering..." : "Register"}
+        </button>
+        <p className="auth-form-text">
+          Already a member? <Link to="/login">Login</Link>
+        </p>
+        {error && <p className="auth-form-error">{error}</p>}
+      </form>
+    </div>
   );
 }

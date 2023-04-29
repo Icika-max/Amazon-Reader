@@ -4,13 +4,11 @@
   align-items: center;
   justify-content: center;
   margin: 50px;
-  background-image: url('/background-4.jpg');
-  /* background-image: linear-gradient(79deg, #e7e4ec, #b9b1b8 48%, #e6e2df); */
-
-  
+  background-color:
+  #c1c1c1 ;
 }
 
-.login-forrm {
+.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,18 +21,18 @@
   box-shadow: 0 0 5px #ccc;
 }
 
-.login-forrm h2 {
+.login-form h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.login-forrm label {
+.login-form label {
   font-size: 1.2rem;
   margin-top: 20px;
 }
 
-.login-forrm input {
+.login-form input {
   width: 100%;
   padding: 10px;
   border: none;
@@ -43,11 +41,11 @@
   font-size: 1.2rem;
 }
 
-.login-forrm input:focus {
+.login-form input:focus {
   outline: none;
 }
 
-.login-forrm button {
+.login-form button {
   width: 100%;
   padding: 10px;
   border: none;
@@ -59,26 +57,39 @@
   transition: all 0.2s ease-in-out;
 }
 
-.login-forrm button:hover {
+.login-form button:hover {
   background-color: #0069d9;
 }
 
-.login-forrm button:disabled {
+.login-form button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.login-forrm p {
+.login-form p {
   margin-top: 20px;
   text-align: center;
   font-size: 1rem;
 }
 
-.login-forrm .link {
-  text-decoration: underline;
+.login-form .link {
+  text-decoration: none;
   color: #007bff;
 }
 
-.login-forrm .link:hover {
-  color: #0069d9;
+.login-form .link:hover {
+  text-decoration: underline;
 }
+.link-to-register {
+  color: #2e3756;
+  margin-top: 20px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.link-to-register:hover {
+  color: #2e3756;
+  text-decoration: underline;
+}
+
