@@ -1,85 +1,17 @@
-// import React, { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { fetchBooks } from './bookslice';
-// import Nav from '../../components/Nav';
-
-// // const userId = useSelector((state) => state.user.id);
-
-// const StoreBooks = () => {
-//   const dispatch = useDispatch();
-//   const books = useSelector((state) => state.books.list);
-//   useEffect(() => {
-//     dispatch(fetchBooks());
-//   }, [dispatch]);
-
-//   console.log(books);
-//   const storeBooks = books.filter((book) => book.location === 'store');
-
-//   const handleAddToCart = async (id, price) => {
-//     try {
-//       const response = await fetch('http://127.0.0.1:3000/carts', {
-//         method: 'POST',
-//         body: JSON.stringify({
-//           quantity: 1,
-//           price: price,
-//           book_id: id,
-//           user_id: 1,
-//         }),
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//       });
-//       const result = await response.json();
-//       console.log(result);
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-
-//   return (
-//     <>
-//     <Nav></Nav>
-//     <div className='store-container'>
-//       <div className='str'>
-//       <h2 className='store-heading'>Store Books</h2>
-//       <ul>
-//       <div className='book-grid'>
-
-//         {storeBooks.map((book) => (
-//           <li className='book-card' key={book.id}>
-//             <img className='book-item img' src={book.image_url} alt={`${book.title} cover`} />
-
-//             <h3>{book.title}</h3>
-//             <p>{book.author}</p>
-//             <p>{book.description}</p>
-//             <p>{book.genre}</p>
-//             <p>{book.price}</p>
-//             <button className='add-cart-btn' onClick={() => {handleAddToCart(book.id, book.price)}}>Add To Cart</button>
-//           </li>
-//         ))}
-//         </div>
-//       </ul>
-//     </div>
-//     </div>
-//     </>
-//   );
-// };
-
-// export default StoreBooks;
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks } from './bookslice';
 import Nav from '../../components/Nav';
 
+
 const StoreBooks = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books.list);
+  const [filterPrice, setFilterPrice] = useState('');
+  
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
-
-  console.log(books);
-  const storeBooks = books.filter((book) => book.location === 'store');
 
   const handleAddToCart = async (id, price) => {
     try {
@@ -102,11 +34,22 @@ const StoreBooks = () => {
     }
   };
 
+  const storeBooks = books.filter((book) => book.location === 'store' && (filterPrice === '' || Number(book.price) <= Number(filterPrice)));
+
   return (
     <>
       <Nav />
       <div className='store-container library-container'>
         <h2 className='store-heading library-heading'>Store Books</h2>
+        <div className='filter-container'>
+          <label htmlFor='filter-price'>Filter by price:</label>
+          <input
+            id='filter-price'
+            type='number'
+            value={filterPrice}
+            onChange={(event) => setFilterPrice(event.target.value)}
+          />
+        </div>
         <ul className='store-book-list'>
           <div className='store-book-grid'>
             {storeBooks.map((book) => (

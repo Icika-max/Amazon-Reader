@@ -62,7 +62,7 @@ const LibraryBooks = () => {
                       handleAddToCart(book.id, book.price);
                     }}
                   >
-                    Add To Cart
+                   Want to Read
                   </button>
                 </div>
               </li>

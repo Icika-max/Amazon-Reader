@@ -1,34 +1,20 @@
-import React from "react";
-// import BookTable from "../feature/books/BooksTable";
-// import OrderTable from "../feature/orders/ordersTable";
-// import LendingTable from "../feature/lendings/lendingTable";
+import React, { Component } from "react";
 import Navbar from "./Navbar";
-import Nav from './Nav';
+import Nav from "./Nav";
+import "./Admin.css";
 
-
-
-
-const Admin = () => {
+class Admin extends Component {
+  render() {
     return (
-        <>
-        <Nav></Nav>
-        <div>
-            <h1 className='admin-header'>Admin Dashboard</h1>
-            
-           
-
-            <Navbar></Navbar>
-
-            
-    {/* <BookTable></BookTable>
-    <OrderTable></OrderTable>
-    <LendingTable></LendingTable> */}
-      
-    
-
+      <>
+        <Nav />
+        <div className="admin-container">
+          <h1 className="admin-header">Admin Dashboard</h1>
+          <Navbar />
         </div>
-        </>
-      );
+      </>
+    );
+  }
 }
- 
+
 export default Admin;
