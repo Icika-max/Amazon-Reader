@@ -1,0 +1,115 @@
+.lending-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lending-heading {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .leading-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .leading-form input[type="number"],
+  .leading-form input[type="text"],
+  .leading-form input[type="date"],
+  .leading-form button[type="submit"] {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .leading-form button[type="submit"] {
+    background-color: #103a5a;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .leading-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  .lending-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .lending-table th,
+  .lending-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .lending-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .lending-table td button {
+    margin-right: 10px;
+    padding: 6px 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .lending-table td button.delete {
+    background-color: #ff4d4f;
+    color: #fff;
+  }
+  
+  .lending-table td button.delete:hover {
+    background-color: #d93636;
+  }
+  
+  .lending-table td button.edit {
+    background-color: #1890ff;
+    color: #fff;
+  }
+  
+  .lending-table td button.edit:hover {
+    background-color: #096dd9;
+  }
+  
+  .page-numbers {
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .page-numbers li {
+    margin: 0 10px;
+  }
+  
+  .page-numbers button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  .page-numbers button:hover {
+    background-color: #f2f2f2;
+  }
+  
