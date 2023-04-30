@@ -48,7 +48,7 @@ const Nav = () => {
                 <FontAwesomeIcon icon={faShoppingCart} />
                 <span>Cart</span>
             </Link>
-            <Link className="button is-danger" to='/' onClick={()=>handleLogout()}>
+            <Link className="button" to='/' onClick={()=>handleLogout()}>
                 <FontAwesomeIcon icon={faSignOutAlt} />
                 <span>Logout</span>
             </Link>

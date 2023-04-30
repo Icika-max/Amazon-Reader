@@ -13,32 +13,36 @@
 .payment-details {
     display: flex;
     flex-direction: column;
-    margin-top: 200px;
-}
-
-.payment-details form {
+    margin-left: 2rem;
+    width: 400px;
+    margin-bottom: 200px;
+  }
+  
+  .payment-details h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .payment-details form {
     display: flex;
     flex-direction: column;
-}
-
-.payment-details form > input {
-    margin: 20px;
-    padding: 10px;
-    background-color: #fff;
-    width: 400px;
-    color: black;
-}
-
-.payment-details form > p {
-    margin-left: 150px;
-    padding: 10px;
-}
-
-.payment-details button {
-    width: 250px;
-    margin-left: 100px;
-}
-
-.payment-details h2 {
-    margin-left: 20px;
-}
+    gap: 1rem;
+  }
+  
+  .payment-details input[type="text"],
+  .payment-details input[type="number"] {
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    border: 2px solid #2e3756;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .payment-details input[type="text"]:focus,
+  .payment-details input[type="number"]:focus {
+    outline: none;
+    border-color: #2e3756;
+    box-shadow: 0 0 0 2px #2e3756;
+  }
+  

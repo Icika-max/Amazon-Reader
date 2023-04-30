@@ -42,25 +42,27 @@ const StoreBooks = () => {
       <div className='store-container library-container'>
         <h2 className='store-heading library-heading'>Store Books</h2>
         <div className='filter-container'>
-          <label htmlFor='filter-price'>Filter by price:</label>
-          <input
-            id='filter-price'
-            type='number'
-            value={filterPrice}
-            onChange={(event) => setFilterPrice(event.target.value)}
-          />
-        </div>
+  <label className='filter-label' htmlFor='filter-price'>Filter by price:</label>
+  <input
+    className='filter-input'
+    id='filter-price'
+    type='number'
+    value={filterPrice}
+    onChange={(event) => setFilterPrice(event.target.value)}
+  />
+</div>
         <ul className='store-book-list'>
           <div className='store-book-grid'>
             {storeBooks.map((book) => (
               <li className='store-book-item book-card' key={book.id}>
-                <div className='book-image-container'>
-                  <img
-                    className='store-book-image'
-                    src={book.image_url}
-                    alt={`${book.title} cover`}
-                  />
-                </div>
+               <div className='book-image-container'>
+  <img
+    className='store-book-image'
+    src={book.image_url}
+    alt={`${book.title} cover`}
+  />
+</div>
+
                 <div className='store-book-details'>
                   <h3 className='store-book-title'>{book.title}</h3>
                   <p className='store-book-author'>{book.author}</p>

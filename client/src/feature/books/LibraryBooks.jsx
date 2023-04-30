@@ -37,8 +37,8 @@ const LibraryBooks = () => {
   return (
     <>
       <Nav />
-      <div className='library-container '>
-        <h2 className='library-heading '>Library Books</h2>
+      <div className='library-container'>
+        <h2 className='library-heading'>Library Books</h2>
         <ul className='library-book-list'>
           <div className='library-book-grid'>
             {libraryBooks.map((book) => (
@@ -62,7 +62,7 @@ const LibraryBooks = () => {
                       handleAddToCart(book.id, book.price);
                     }}
                   >
-                   Want to Read
+                    Want to Read
                   </button>
                 </div>
               </li>

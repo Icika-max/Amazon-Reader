@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const API_URL = 'http://localhost:3000/books';
 
@@ -52,7 +53,9 @@ function HomePage() {
         <div className='hm-container'>
           <div id='search-bar'>
             <input type='text' placeholder='Search books by name or genre' value={searchQuery} onChange={handleSearchQueryChange} id='search-input' />
-            <button className='search-button' onClick={handleReset}>Search</button>
+            <button className='search-button' onClick={handleReset}>
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
           </div>
 
           <select id='genre-filter' value={selectedGenre} onChange={handleGenreChange}>
@@ -74,8 +77,6 @@ function HomePage() {
                   <p className='book-author'>{book.author}</p>
                   <p className='book-description'>{book.description}</p>
                   <p className='book-rating'>{getStarRating(book.rating)}</p>
-                  
-                 
                 </Link>
               ))}
             </div>
