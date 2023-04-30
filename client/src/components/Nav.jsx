@@ -42,7 +42,7 @@ const Nav = () => {
             </Link>
             <Link className="navbar-item" to='/library'>
                 <FontAwesomeIcon icon={faBook} />
-                <span>Library</span>
+                 <span>Library</span>
             </Link>
             <Link className="navbar-item" to='/cart'>
                 <FontAwesomeIcon icon={faShoppingCart} />
@@ -50,7 +50,7 @@ const Nav = () => {
             </Link>
             <Link className="button" to='/' onClick={()=>handleLogout()}>
                 <FontAwesomeIcon icon={faSignOutAlt} />
-                <span>Logout</span>
+                 <span>Logout</span>
             </Link>
         </nav>
     );

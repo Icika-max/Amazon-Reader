@@ -212,89 +212,6 @@ body {
   font-size: 16px;
 }
 
-.navbar {
-  background-color: 
-  #2e3756;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 1rem;
-}
-
-.navbar-logo {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 1rem;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-
-.navbar-item:hover {
-  background-color: #f4f4f4;
-}
-
-.navbar-item.active {
-  background-color: #f4f4f4;
-}
-
-.navbar-logo {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: lighter;
-  padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background-color: #000;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 1rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-
-.button:hover {
-  background-color: #666;
-}
-
-.button span {
-  margin-left: 10px;
-}
-
-.button{
-  margin-bottom:3rem;
-}
-
 
 
 .library-container {
@@ -841,4 +758,64 @@ body {
 .admin-link:hover {
   text-decoration: underline;
 }
+.navbar {
+  background-color: #2e3756;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: lighter;
+  padding: 1.5rem 1rem;
+  margin: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.navbar-item:hover {
+  background-color: #103a5a;
+}
+
+.navbar-item.active {
+  background-color: #c1c1c1;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #666;
+}
+
+.button span {
+  margin-left: 10px;
+}
+.navbar-item span {
+  margin-left: 1rem;
+}
+
 
