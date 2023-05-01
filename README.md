@@ -5,6 +5,8 @@
 
 - This is a rails and react.js application for an online bookstore that serves both as a library and a store.
 
+- This is an online platform where users can search, browse, and purchase books. The application allows users to create an account, add books to their cart, checkout, and manage their orders. The bookstore offers a wide selection of books across various genres including fiction, crime, mystery, and more.
+
 # Getting  Started
 
 - In order to use this repo you need to have the following installed:
@@ -128,7 +130,7 @@
 
 # User
 - A user is a person looking to purchase or borrow books.
-- Auth (Login & Register )
+- User authentication: Users can create an account and login securely to the platform.
 - View all books in the store.
 - View all books in the library.
 - Search for books by name or genre.
