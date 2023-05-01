@@ -11,9 +11,9 @@ function ViewCart({carts, onRemoveItem}) {
     return (
         <>
         <Nav></Nav>
-            <div className="book-image-container">
+            <div className="cart-image-container">
                 {carts.map((cart)=>
-                    <div key={cart.id} className="book-image">
+                    <div key={cart.id} className="cart-book-image">
                         <img src={cart.book.image_url} alt="Image Loading..." />
                         <p>{cart.book.title}</p>
                         <p>{cart.book.author}</p>
@@ -22,9 +22,9 @@ function ViewCart({carts, onRemoveItem}) {
                     </div>
                 )}
             </div>
-            <div className="order-summary">
+            <div className="cart-order-summary">
                 <h2>Order Summary</h2>
-                <table>
+                <table className="cart-table">
                     <thead>
                         <tr>
                             <th>Title</th>

@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resources :user_roles
   resources :roles
 
-  resources :lendings
-  resources :orders
-  resources :users
+  # resources :lendings
+  # resources :orders
+  # resources :users
 
   #books
   resources :books, only: [:index, :show, :create, :update, :destroy]
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     post '/users', to: 'users#create'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
+    get '/me', to: 'users#show'
 
    #admin_sessions
    post 'admin/login', to: 'admin_sessions#create'
@@ -44,7 +45,8 @@ Rails.application.routes.draw do
 
  
  
-
+  get '/user_orders/:id', to: 'orders#user_orders'
+  get '/user_lendings/:id', to: 'lendings#user_lendings'
   
   #carts
   resources :carts, only: [:index, :create, :update, :destroy]

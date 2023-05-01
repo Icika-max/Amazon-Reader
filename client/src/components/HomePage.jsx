@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import Admin from './Admin';
+import { Link } from 'react-router-dom';
 import Nav from './Nav';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+const API_URL = 'http://localhost:3000/books';
 
 function HomePage() {
   const [books, setBooks] = useState([]);
@@ -10,87 +12,77 @@ function HomePage() {
   const [selectedGenre, setSelectedGenre] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/books')
+    fetch(API_URL)
       .then(response => response.json())
       .then(data => setBooks(data))
       .catch(error => console.error(error));
   }, []);
 
-  const handleSearch = () => {
-    const filteredBooks = books.filter(book => (
-      book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      book.genre.toLowerCase().includes(searchQuery.toLowerCase())
-    ));
-    setBooks(filteredBooks);
+  const handleSearchQueryChange = (event) => {
+    setSearchQuery(event.target.value);
   }
 
   const handleGenreChange = (event) => {
     setSelectedGenre(event.target.value);
   }
 
-  const filteredBooks = selectedGenre !== '' ? books.filter(book => book.genre === selectedGenre) : books;
+  const handleReset = () => {
+    setSearchQuery('');
+    setSelectedGenre('');
+  }
+
+  const filteredBooks = books.filter(book => (
+    (book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    book.genre.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    (selectedGenre === '' || book.genre === selectedGenre)
+  ));
+
+  const getStarRating = (rating) => {
+    let stars = '';
+    const randomRating = Math.floor(Math.random() * 5) + 1; 
+    for (let i = 0; i < randomRating; i++) {
+      stars += '⭐️';
+    }
+    return stars;
+  }
 
   return (
     <>
-    <Nav></Nav>
-    <div className='home-container'>
-      <div className='hm-container'>
-      <div id='search-bar'>
-        <input type="text" placeholder="Search books by name or genre" onChange={(event) => setSearchQuery(event.target.value)}  id="search-input"/>
-        <button onClick={handleSearch} className="search-button">Search</button>
-        </div>
+      <Nav />
+      <div className='home-container'>
+        <div className='hm-container'>
+          <div id='search-bar'>
+            <input type='text' placeholder='Search books by name or genre' value={searchQuery} onChange={handleSearchQueryChange} id='search-input' />
+            <button className='search-button' onClick={handleReset}>
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          </div>
 
-        <select id= "dropdown" value={selectedGenre} onChange={handleGenreChange}>
-          <option value=''>All books</option>
-          <option value='Fantasy'>Fantasy</option>
-          <option value='Fiction'>Fiction</option>
-          <option value='Romance'>Romance</option>
-          <option value='Crime'>Crime</option>
-          <option value='Mystery'>Mystery</option>
-        </select>
-      
+          <select id='genre-filter' value={selectedGenre} onChange={handleGenreChange}>
+            <option value=''>All Books</option>
+            <option value='Fantasy'>Fantasy</option>
+            <option value='Fiction'>Fiction</option>
+            <option value='Romance'>Romance</option>
+            <option value='Crime'>Crime</option>
+            <option value='Mystery'>Mystery</option>
+          </select>
 
-      {/* <div className='side-bar'>
-        <div id='nav'>
-          <Link id='home' to='/'>Home</Link>
-          <Link id='home' to='/Dashboard'>Admin</Link>
-          <Link id='home' to='/Library'>Library</Link>
-          <Link id='home' to='/Store'>Store</Link>
-          <Link id='home' to='/Cart'>Cart</Link>
-          <Link id='home' to='/LandingPage'>Logout</Link>
-        </div>
-      </div> */}
-
-      <div className='featured-books'>
-          <h2 id= "h2">Featured Books</h2>
-          <div className='book-grid'>
-            {filteredBooks.map(book => (
-              <div className='book-card' key={book.id}>
-                <img src={book.image_url}/>
-                <h3>{book.title}</h3>
-                <p className='book-author'>{book.author}</p>
-                <p className='book-description'>{book.description}</p>
-                <p className='book-rating'>{book.rating}</p>
-                <p className='book-genre'>{book.genre}</p>
-                <p className='book-price'>{book.price}</p>
-                {/* <p className='book-location'>{book.location}</p> */}
-              </div>
-            ))}
+          <div className='featured-books'>
+            <h2 id='h2'>Featured Books</h2>
+            <div className='book-grid'>
+              {filteredBooks.map(book => (
+                <Link to={`/books/${book.id}`} className='book-card' key={book.id}>
+                  <img src={book.image_url} alt={`Cover of ${book.title}`} />
+                  <h3>{book.title}</h3>
+                  <p className='book-author'>{book.author}</p>
+                  <p className='book-description'>{book.description}</p>
+                  <p className='book-rating'>{getStarRating(book.rating)}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-        {/* <BrowserRouter>
-      <Nav></Nav>
-        <Routes>
-          <Route path='/admin' element={<Admin></Admin>}>Admin</Route>
-          <Route path='/homepage' element={<HomePage></HomePage>}>Home</Route>
-         
-
-        </Routes>
-      
-      </BrowserRouter> */}
       </div>
-     
-    </div>
     </>
   );
 }
