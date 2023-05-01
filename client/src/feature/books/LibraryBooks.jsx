@@ -15,7 +15,7 @@ const LibraryBooks = () => {
 
   const handleAddToCart = async (id, price) => {
     try {
-      const response = await fetch('http://127.0.0.1:3000/carts', {
+      const response = await fetch('/carts', {
         method: 'POST',
         body: JSON.stringify({
           quantity: 1,

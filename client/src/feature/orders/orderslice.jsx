@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchOrders = createAsyncThunk(
   'orders/fetchOrders',
   async () => {
-    const response = await fetch('http://localhost:3000/orders');
+    const response = await fetch('/orders');
     if (!response.ok) {
       throw new Error('Failed to fetch orders');
     }
@@ -15,7 +15,7 @@ export const fetchOrders = createAsyncThunk(
 export const addOrder = createAsyncThunk(
   'orders/addOrder',
   async (order) => {
-    const response = await fetch('http://localhost:3000/orders', {
+    const response = await fetch('/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(order),
@@ -30,7 +30,7 @@ export const addOrder = createAsyncThunk(
 export const deleteOrder = createAsyncThunk(
   'orders/deleteOrder',
   async (orderId) => {
-    const response = await fetch(`http://localhost:3000/orders/${orderId}`, {
+    const response = await fetch(`/orders/${orderId}`, {
       method: 'DELETE',
     });
     if (!response.ok) {
@@ -43,7 +43,7 @@ export const deleteOrder = createAsyncThunk(
 export const updateOrder = createAsyncThunk(
   'orders/updateOrder',
   async (order) => {
-    const response = await fetch(`http://localhost:3000/orders/${order.id}`, {
+    const response = await fetch(`/orders/${order.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(order),

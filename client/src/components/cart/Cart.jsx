@@ -6,7 +6,7 @@ function Cart() {
     const [carts, setCart] = useState([])
 
     useEffect(() =>{
-        fetch('http://localhost:3000/carts')
+        fetch('/carts')
         .then(res=>res.json())
         .then(data=>setCart(data))
     }, [])
@@ -14,7 +14,7 @@ function Cart() {
     const handleRemoveItem = (itemId) => {
         setCart(prevState => prevState.filter(item => item.id !== itemId))
     
-        fetch(`http://localhost:3000/carts/${itemId}`, {
+        fetch(`/carts/${itemId}`, {
             method: 'DELETE'
         })
         .then(res => {

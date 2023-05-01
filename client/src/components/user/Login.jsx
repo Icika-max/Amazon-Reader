@@ -15,7 +15,7 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     setIsLoggingIn(true);
-    fetch("http://127.0.0.1:3000/login", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

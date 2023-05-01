@@ -15,12 +15,12 @@ function Account() {
     // const uid = parseInt(localStorage.getItem('uid'));
 
     useEffect(() =>{
-        fetch(`http://localhost:3000/user_orders/${uid}`)
+        fetch(`/user_orders/${uid}`)
         .then(res=>res.json())
         .then(data=>setPurchases(data))
 
 
-        fetch(`http://localhost:3000/user_lendings/${uid}`)
+        fetch(`/user_lendings/${uid}`)
         .then(res=>res.json())
         .then(data=>setLendings(data))
     },[])

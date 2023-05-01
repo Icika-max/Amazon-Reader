@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchLendings = createAsyncThunk(
   'lendings/fetchLendings',
   async () => {
-    const response = await fetch('http://localhost:3000/lendings');
+    const response = await fetch('/lendings');
     if (!response.ok) {
       throw new Error('Failed to fetch lendings');
     }
@@ -14,7 +14,7 @@ export const fetchLendings = createAsyncThunk(
 export const addLending = createAsyncThunk(
   'lendings/addLending',
   async (lending) => {
-    const response = await fetch('http://localhost:3000/lendings', {
+    const response = await fetch('/lendings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(lending),
@@ -29,7 +29,7 @@ export const addLending = createAsyncThunk(
 export const deleteLending = createAsyncThunk(
   'lendings/deleteLending',
   async (lendingId) => {
-    const response = await fetch(`http://localhost:3000/lendings/${lendingId}`, {
+    const response = await fetch(`/lendings/${lendingId}`, {
       method: 'DELETE',
     });
     if (!response.ok) {
@@ -42,7 +42,7 @@ export const deleteLending = createAsyncThunk(
 export const updateLending = createAsyncThunk(
   'lendings/updateLending',
   async (lending) => {
-    const response = await fetch(`http://localhost:3000/lendings/${lending.id}`, {
+    const response = await fetch(`/lendings/${lending.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(lending),

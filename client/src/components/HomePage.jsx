@@ -4,7 +4,7 @@ import Nav from './Nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const API_URL = 'http://localhost:3000/books';
+const API_URL = 'https://amazon-api-r8sx.onrender.com/books';
 
 function HomePage() {
   const [books, setBooks] = useState([]);
