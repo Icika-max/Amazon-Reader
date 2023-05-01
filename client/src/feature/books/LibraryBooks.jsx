@@ -3,20 +3,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks } from './bookslice';
 import Nav from '../../components/Nav';
 
-
 const LibraryBooks = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books.list);
-  
+
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
-  const storeBooks = books.filter(book => book.location === 'library');
+  const libraryBooks = books.filter((book) => book.location === 'library');
 
   const handleAddToCart = async (id, price) => {
     try {
-      const response = await fetch('http://127.0.0.1:3000/carts', {
+      const response = await fetch('https://kid-server.onrender.com/carts', {
         method: 'POST',
         body: JSON.stringify({
           quantity: 1,
@@ -34,30 +33,43 @@ const LibraryBooks = () => {
       console.log(error);
     }
   };
-  
+
   return (
     <>
-    <Nav></Nav>
-    <div className='library-container'>
-      <h2 className='library-heading'>Library Books</h2>
-      <ul className='book-list'>
-        {storeBooks.map(book => (
-          <li key={book.id} className='book-item'>
-            <div className='book-image-container'>
-              <img src={book.image_url} alt={`${book.title} cover`} className='book-image' />
-            </div>
-            <div className='book-details'>
-              <h3 className='book-title'>{book.title}</h3>
-              <p className='book-author'>{book.author}</p>
-              <p className='book-description'>{book.description}</p>
-              <p className='book-genre'>{book.genre}</p>
-              <p className='book-price'>${book.price}</p>
-              <button className='add-to-cart-btn' onClick={() => {handleAddToCart(book.id, book.price)}}>Add To Cart</button>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <Nav />
+      <div className='library-container'>
+        <h2 className='library-heading'>Library Books</h2>
+        <ul className='library-book-list'>
+          <div className='library-book-grid'>
+            {libraryBooks.map((book) => (
+              <li className='library-book-item book-card' key={book.id}>
+                <div className='library-book-image-container'>
+                  <img
+                    className='library-book-image'
+                    src={book.image_url}
+                    alt={`${book.title} cover`}
+                  />
+                </div>
+                <div className='library-book-details'>
+                  <h3 className='library-book-title'>{book.title}</h3>
+                  <p className='library-book-author'>{book.author}</p>
+                  <p className='library-book-description'>{book.description}</p>
+                  <p className='library-book-genre'>{book.genre}</p>
+                  <p className='library-book-price'>${book.price}</p>
+                  <button
+                    className='library-add-to-cart-btn add-cart-btn'
+                    onClick={() => {
+                      handleAddToCart(book.id, book.price);
+                    }}
+                  >
+                    Want to Read
+                  </button>
+                </div>
+              </li>
+            ))}
+          </div>
+        </ul>
+      </div>
     </>
   );
 };

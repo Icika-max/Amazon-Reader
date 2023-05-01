@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "https://amazon-api-r8sx.onrender.com",
+  "proxy": "https://kid-server.onrender.com/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,6 +12,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.1",
     "@reduxjs/toolkit": "^1.9.5",

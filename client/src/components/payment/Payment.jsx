@@ -8,7 +8,7 @@ function Payment() {
     const [orders, setOrders] = useState([])
 
     useEffect(() =>{
-        fetch('http://localhost:3000/carts')
+        fetch('https://kid-server.onrender.com/carts')
         .then(res=>res.json())
         .then(data=>setOrders(data))
     }, [])
@@ -16,7 +16,7 @@ function Payment() {
     const handlePurchase = () => {
         orders.map((order) => {
             if (order.price > 0) {
-                fetch('http://localhost:3000/orders', {
+                fetch('https://kid-server.onrender.com/orders', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -35,7 +35,7 @@ function Payment() {
                 .then(data=>console.log(data))
                 .catch(error=>console.log(error))
             } else {
-                fetch('http://localhost:3000/lendings', {
+                fetch('https://kid-server.onrender.com/lendings', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -54,7 +54,7 @@ function Payment() {
                 .catch(error=>console.log(error))
             }
            
-        fetch(`http://localhost:3000/carts/${order.id}`, {
+        fetch(`https://kid-server.onrender.com/carts/${order.id}`, {
             method: 'DELETE'
         })
         .then(res => {

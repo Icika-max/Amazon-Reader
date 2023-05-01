@@ -1,24 +1,19 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-// import BookTable from "../feature/books/BooksTable";
-// import OrderTable from "../feature/orders/ordersTable";
-// import LendingTable from "../feature/lendings/lendingTable";
-
+import "./Navbar.css";
 
 function Navbar() {
-
   return (
-    <div className="nav">
-        <ul className="list">
-            <li>
-                <Link to = '/books'>Books</Link>
-                <Link to = '/orders'>Orders</Link> 
-                <Link to = '/lendings'>Lendings</Link>
-                {/* <Link to = '/myaccount'>My account</Link> */}
-            </li>
-        </ul>
+    <div className="admin-nav">
+      <ul className="admin-list">
+        <li>
+          <Link to='/books' className="admin-link">Books</Link>
+          <Link to='/orders' className="admin-link">Orders</Link> 
+          <Link to='/lendings' className="admin-link">Lendings</Link>
+        </li>
+      </ul>
     </div>
   )
 }
 
-export default Navbar
+export default Navbar;

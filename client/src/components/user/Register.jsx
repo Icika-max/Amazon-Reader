@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
-export default function Register() {
+const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,9 +10,18 @@ export default function Register() {
   const [isRegistering, setIsRegistering] = useState(false);
   const [cachedResponse, setCachedResponse] = useState({});
   const navigate = useNavigate();
-  // function Loading() {
-  //   return <div>Loading...</div>;
-  // }
+
+  useEffect(() => {
+    if (username in cachedResponse) {
+      const data = cachedResponse[username];
+      if (data.message) {
+        navigate("/login");
+      } else {
+        setError(data.errors);
+        setIsRegistering(false);
+      }
+    }
+  }, [username, cachedResponse, navigate]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -33,19 +42,7 @@ export default function Register() {
     e.preventDefault();
     setError("");
     setIsRegistering(true);
-    if (username in cachedResponse) {
-      const data = cachedResponse[username];
-      if (data.message) {
-        navigate('/login')
-        // window.location.href = "/login"; // redirect to login page
-        // return;
-      } else {
-        setError(data.errors);
-        setIsRegistering(false);
-        // return;
-      }
-    }
-    fetch("http://127.0.0.1:3000/users", {
+    fetch("https://kid-server.onrender.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,48 +53,77 @@ export default function Register() {
         password,
       }),
     })
-    .then(res=>{
-      if(res.ok){
-        navigate('/login')
-      }
-    })
-    .catch( error =>{
-      setError(error);
-      setIsRegistering(false);
-    })
-    setCachedResponse({ ...cachedResponse, [username]: { message, error } });
+      .then((res) => {
+        if (res.ok) {
+          navigate("/login");
+        } else {
+          throw new Error(res.statusText);
+        }
+      })
+      .then(() => {
+        setCachedResponse({ ...cachedResponse, [username]: { message: "success" } });
+      })
+      .catch((error) => {
+        setError(error.message);
+        setIsRegistering(false);
+      });
   };
+
   return (
-    
-    <div className="bckg">
-      <div>
-        <img src="background-3.jpg" />
-      </div> */}
-      <h2>Register</h2>
-
-          <form className="register-form" onSubmit={handleSubmit} >
-          <label htmlFor="username">Username</label>
-
-            <input placeholder="Enter Username" type="text" name="username" value={username} onChange={handleInputChange} />
-            <label htmlFor="email">email</label>
-
-            <input placeholder="Enter your email" type="email" name="email" value={email} onChange={handleInputChange} />
-            {isRegistering }
-            <label htmlFor="password">password</label>
-
-        
-            <input type="password" name="password" value={password} onChange={handleInputChange} />
-            <button type="submit" onSubmit={()=>handleSubmit(e)}>{isRegistering ? "Registering..." : "Register"}</button>
-
-            <p>
-              Already a member? <Link to="/login">Login</Link>
-            </p>
-            {error && <p>{error}</p>}
-          </form>
+    <div className="auth-form-container">
+      <h2 className="auth-form-heading">Register</h2>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="auth-form-field">
+          <label htmlFor="username" className="auth-form-label">
+            Username
+          </label>
+          <input
+            placeholder="Enter Username"
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleInputChange}
+            className="auth-form-input"
+          />
         </div>
-
-      </div>
-      
+        <div className="auth-form-field">
+          <label htmlFor="email" className="auth-form-label">
+            Email
+          </label>
+          <input
+            placeholder="Enter your email"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleInputChange}
+            className="auth-form-input"
+          />
+        </div>
+        <div className="auth-form-field">
+          <label htmlFor="password" className="auth-form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+            className="auth-form-input"
+          />
+        </div>
+        <button
+          type="submit"
+          className="auth-form-button"
+        >
+          {isRegistering ? "Registering..." : "Register"}
+        </button>
+        <p className="auth-form-text">
+          Already a member? <Link to="/login">Login</Link>
+        </p>
+        {error && <p className="auth-form-error">{error}</p>}
+      </form>
     </div>
   );
-}
+};
+
+export default Register;
