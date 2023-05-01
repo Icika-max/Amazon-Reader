@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
-export default function Register() {
+const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,6 +10,18 @@ export default function Register() {
   const [isRegistering, setIsRegistering] = useState(false);
   const [cachedResponse, setCachedResponse] = useState({});
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (username in cachedResponse) {
+      const data = cachedResponse[username];
+      if (data.message) {
+        navigate("/login");
+      } else {
+        setError(data.errors);
+        setIsRegistering(false);
+      }
+    }
+  }, [username, cachedResponse, navigate]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,16 +42,7 @@ export default function Register() {
     e.preventDefault();
     setError("");
     setIsRegistering(true);
-    if (username in cachedResponse) {
-      const data = cachedResponse[username];
-      if (data.message) {
-        navigate("/login");
-      } else {
-        setError(data.errors);
-        setIsRegistering(false);
-      }
-    }
-    fetch("/users", {
+    fetch("https://kid-server.onrender.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,13 +56,17 @@ export default function Register() {
       .then((res) => {
         if (res.ok) {
           navigate("/login");
+        } else {
+          throw new Error(res.statusText);
         }
       })
+      .then(() => {
+        setCachedResponse({ ...cachedResponse, [username]: { message: "success" } });
+      })
       .catch((error) => {
-        setError(error);
+        setError(error.message);
         setIsRegistering(false);
       });
-    setCachedResponse({ ...cachedResponse, [username]: { message, error } });
   };
 
   return (
@@ -106,7 +113,6 @@ export default function Register() {
         </div>
         <button
           type="submit"
-          onSubmit={() => handleSubmit(e)}
           className="auth-form-button"
         >
           {isRegistering ? "Registering..." : "Register"}
@@ -118,4 +124,6 @@ export default function Register() {
       </form>
     </div>
   );
-}
+};
+
+export default Register;

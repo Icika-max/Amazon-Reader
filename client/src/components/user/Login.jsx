@@ -14,7 +14,7 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     setIsLoggingIn(true);
-    fetch("/login", {
+    fetch("https://kid-server.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,8 @@ export default function Login() {
     </button>
     <div>
       {message && <p className="auth-form-text">{message}</p>}
-      {error && <p className="auth-form-error">{error}</p>}
+      {error && <p className="auth-form-error">{error.message}</p>}
+
     </div>
     <p className="auth-form-text">
       Not a member?{" "}

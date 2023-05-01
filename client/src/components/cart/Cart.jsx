@@ -6,7 +6,7 @@ function Cart() {
     const [carts, setCart] = useState([])
 
     useEffect(() =>{
-        fetch('/carts')
+        fetch('https://kid-server.onrender.com/carts')
         .then(res=>res.json())
         .then(data=>setCart(data))
     }, [])
@@ -14,7 +14,7 @@ function Cart() {
     const handleRemoveItem = (itemId) => {
         setCart(prevState => prevState.filter(item => item.id !== itemId))
     
-        fetch(`/carts/${itemId}`, {
+        fetch(`https://kid-server.onrender.com/carts/${itemId}`, {
             method: 'DELETE'
         })
         .then(res => {
