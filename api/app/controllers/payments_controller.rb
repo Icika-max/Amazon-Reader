@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :authorize_admin, except: [:show, :index, :create]
+  # before_action :authorize_admin, except: [:show, :index, :create]
   before_action :set_payment, only: %i[ show update destroy ]
 
   # GET /payments
