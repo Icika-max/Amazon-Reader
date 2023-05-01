@@ -85,11 +85,30 @@
         - npm run dev
 
   # Screenshots of Api Endpoints
+  # post /users
+  ![Screenshot from 2023-05-01 17-34-45](https://user-images.githubusercontent.com/117739286/235468458-e616892f-f8a6-44d3-a41c-c46cea760114.png)
+  
+  # post /login
+  ![Screenshot from 2023-05-01 17-36-04](https://user-images.githubusercontent.com/117739286/235468671-89fb2d56-9cc9-47e8-95a4-800df2df01e3.png)
+
+  # delete /logout
+  ![Screenshot from 2023-05-01 17-37-20](https://user-images.githubusercontent.com/117739286/235468851-13e03bba-518c-4fdd-ac4e-bd550367cb6b.png)
+
+
   # Get /users
   ![Screenshot from 2023-05-01 17-24-28](https://user-images.githubusercontent.com/117739286/235466830-6e6361a9-6d67-4d67-a66a-e0b6f9b68973.png)
 
   # Get /books
-  ![Screenshot from 2023-05-01 17-26-03](https://user-images.githubusercontent.com/117739286/235467057-02f5c1e2-7bbd-4a34-bd44-695a769ecff7.png)      
+  ![Screenshot from 2023-05-01 17-26-03](https://user-images.githubusercontent.com/117739286/235467057-02f5c1e2-7bbd-4a34-bd44-695a769ecff7.png)
+
+  # Get /carts
+  ![Screenshot from 2023-05-01 17-28-00](https://user-images.githubusercontent.com/117739286/235467519-3cd45057-6922-443e-8512-cc4eb3fd5cfd.png)
+
+  # Get /payments
+  ![Screenshot from 2023-05-01 17-30-36](https://user-images.githubusercontent.com/117739286/235467852-1189c7f5-2879-42d4-be71-520fbf9b4f7d.png)
+
+  # Get /returns
+  ![Screenshot from 2023-05-01 17-32-08](https://user-images.githubusercontent.com/117739286/235468034-0cb1e142-5ada-4e42-af78-8622d5e170a2.png)      
 
 # User Stories
 
