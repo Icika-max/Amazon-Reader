@@ -94,6 +94,8 @@
   # delete /logout
   ![Screenshot from 2023-05-01 17-37-20](https://user-images.githubusercontent.com/117739286/235468851-13e03bba-518c-4fdd-ac4e-bd550367cb6b.png)
 
+  # Get /user_role
+  ![Screenshot from 2023-05-01 17-41-29](https://user-images.githubusercontent.com/117739286/235469582-7720e782-2da1-4e29-ad91-14e896c6fc13.png)
 
   # Get /users
   ![Screenshot from 2023-05-01 17-24-28](https://user-images.githubusercontent.com/117739286/235466830-6e6361a9-6d67-4d67-a66a-e0b6f9b68973.png)
