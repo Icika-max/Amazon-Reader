@@ -6,7 +6,7 @@ class CartsController < ApplicationController
         render json: @carts_books
     end
 
-    # POST item to cart
+    # POST item to cart  
     def create
         @cart = Cart.create(carts_params)
         if @cart.valid?
