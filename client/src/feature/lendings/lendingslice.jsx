@@ -42,7 +42,7 @@ export const deleteLending = createAsyncThunk(
 export const updateLending = createAsyncThunk(
   'lendings/updateLending',
   async (lending) => {
-    const response = await fetch(`/lendings/${lending.id}`, {
+    const response = await fetch(`https://kid-server.onrender.com/lendings/${lending.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(lending),

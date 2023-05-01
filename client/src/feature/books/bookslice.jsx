@@ -14,7 +14,7 @@ export const fetchBooks = createAsyncThunk(
 export const addBook = createAsyncThunk(
   'books/addBook',
   async (book) => {
-    const response = await fetch('/books', {
+    const response = await fetch('https://kid-server.onrender.com/books', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(book),
@@ -29,7 +29,7 @@ export const addBook = createAsyncThunk(
 export const deleteBook = createAsyncThunk(
   'books/deleteBook',
   async (bookId) => {
-    const response = await fetch(`/books/${bookId}`, {
+    const response = await fetch(`https://kid-server.onrender.com/books/${bookId}`, {
       method: 'DELETE',
     });
     if (!response.ok) {
@@ -42,7 +42,7 @@ export const deleteBook = createAsyncThunk(
 export const updateBook = createAsyncThunk(
   'books/updateBook',
   async (book) => {
-    const response = await fetch(`/books/${book.id}`, {
+    const response = await fetch(`https://kid-server.onrender.com/books/${book.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(book),
