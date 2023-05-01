@@ -13,8 +13,6 @@
 
 - Ruby - 3.1.+
 
-# Entity Relationship Diagram
-![Screenshot from 2023-05-01 17-11-54](https://user-images.githubusercontent.com/117739286/235464720-8d162ae1-be31-4b39-a6f7-1e4a2da32e22.png)
 
 # Installation
 
@@ -49,6 +47,11 @@
 - Remember to replace your username when cloning.
 
         - git@github.com:Icika-max/Amazon-Reader.git
+
+
+# Entity Relationship Diagram
+
+![Screenshot from 2023-05-01 17-11-54](https://user-images.githubusercontent.com/117739286/235464720-8d162ae1-be31-4b39-a6f7-1e4a2da32e22.png)
 
 # Project SetUp
 
