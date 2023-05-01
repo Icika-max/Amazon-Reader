@@ -15,7 +15,7 @@ const StoreBooks = () => {
 
   const handleAddToCart = async (id, price) => {
     try {
-      const response = await fetch('/carts', {
+      const response = await fetch('https://kid-server.onrender.com/carts', {
         method: 'POST',
         body: JSON.stringify({
           quantity: 1,

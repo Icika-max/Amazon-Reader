@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show update destroy]
-  before_action :authorize_admin, except: [:show,:index, :create, :user_orders]
+  # before_action :authorize_admin, except: [:show,:index, :create, :user_orders]
 
   # GET /orders
   def index
-    @orders = Order.all.where(user_id: session[:user_id])
+    @orders = Order.all
     # .where(user_id: session[:user_id])
     render json: @orders
   end
