@@ -1,71 +1,77 @@
-
- .auth-form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-image: url("https://images.pexels.com/photos/10140508/pexels-photo-10140508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+.auth-form-container {
+  background-image: url('https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-size: cover;
-  background-position: center center;
-}
-
-
-.auth-form-container h2 {
-  font-size: 28px;
-  font-weight: 600;
-  margin: 0;
-  margin-bottom: 20px;
-}
-
-.login-forrm {
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
 }
 
-.login-forrm label {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-.login-forrm input {
-  background-color: #f9f9f9;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  color: #333;
-  font-size: 16px;
-  padding: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.login-forrm button {
-  background-color: #474b56;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  background-color: #1e2e47 ;
   color: #fff;
+  width: 500px;
+}
+
+.auth-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.auth-form-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.auth-form-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+}
+
+.auth-form-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0077cc;
+  border: none;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 10px;
-  width: 100%;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.login-forrm button:hover {
-  background-color: #303f9f;
+.auth-form-button:hover {
+  background-color: #0066aa;
 }
 
-.link-to-register {
-  color: #3f51b5;
-  font-weight: 600;
+.auth-form-text {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #000;
+}
+
+.auth-form-error {
+  color: #cc0000;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.auth-form-heading{
+  color: #000;
+  font-weight: bolder;
+}
+.link-to-register{
+  color: white;
 }
