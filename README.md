@@ -13,6 +13,9 @@
 
 - Ruby - 3.1.+
 
+# Entity Relationship Diagram
+![Screenshot from 2023-05-01 17-11-54](https://user-images.githubusercontent.com/117739286/235464720-8d162ae1-be31-4b39-a6f7-1e4a2da32e22.png)
+
 # Installation
 
 - To use this repo on your machine requires some simple steps
@@ -72,17 +75,21 @@
         - rails s
 
 
-## React Set-up
+# React Set-up
+- React dependencies
 
-- To set up the React frontend, install the dependencies:
+        - npm install 
 
+- Run the react server:
 
-        - npm install --prefix client
+        - npm run dev
 
+  # Screenshots of Api Endpoints
+  # Get /users
+  ![Screenshot from 2023-05-01 17-24-28](https://user-images.githubusercontent.com/117739286/235466830-6e6361a9-6d67-4d67-a66a-e0b6f9b68973.png)
 
-- Run the server:
-
-        - npm start --prefix client
+  # Get /books
+  ![Screenshot from 2023-05-01 17-26-03](https://user-images.githubusercontent.com/117739286/235467057-02f5c1e2-7bbd-4a34-bd44-695a769ecff7.png)      
 
 # User Stories
 
