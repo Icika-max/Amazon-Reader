@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchBooks = createAsyncThunk(
   'books/fetchBooks',
   async () => {
-    const response = await fetch('/books');
+    const response = await fetch('https://kid-server.onrender.com/books');
     if (!response.ok) {
       throw new Error('Failed to fetch books');
     }
