@@ -8,7 +8,7 @@ function Payment() {
     const [orders, setOrders] = useState([])
 
     useEffect(() =>{
-        fetch('/carts')
+        fetch('https://kid-server.onrender.com/carts')
         .then(res=>res.json())
         .then(data=>setOrders(data))
     }, [])
