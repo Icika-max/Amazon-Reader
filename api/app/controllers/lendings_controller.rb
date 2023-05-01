@@ -1,6 +1,6 @@
 class LendingsController < ApplicationController
   before_action :set_lending, only: %i[ show update destroy ]
-  before_action :authorize_admin, except: [:show, :index, :user_lendings]
+  # before_action :authorize_admin, except: [:show, :index, :user_lendings]
 
   # GET /lendings
   def index
