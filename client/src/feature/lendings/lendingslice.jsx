@@ -29,7 +29,7 @@ export const addLending = createAsyncThunk(
 export const deleteLending = createAsyncThunk(
   'lendings/deleteLending',
   async (lendingId) => {
-    const response = await fetch(`https://kid-server.onrender.com/lendings/${lendingId}`, {
+    const response = await fetch(`https://amazon-reader.onrender.com/lendings/${lendingId}`, {
       method: 'DELETE',
     });
     if (!response.ok) {
