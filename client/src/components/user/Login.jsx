@@ -14,7 +14,7 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     setIsLoggingIn(true);
-    fetch("https://kid-server.onrender.com/login", {
+    fetch("https://amazon-reader.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -15,12 +15,12 @@ function Account() {
     // const uid = parseInt(localStorage.getItem('uid'));
 
     useEffect(() =>{
-        fetch(`https://kid-server.onrender.com/user_orders/${uid}`)
+        fetch(`https://amazon-reader.onrender.com/user_orders/${uid}`)
         .then(res=>res.json())
         .then(data=>setPurchases(data))
 
 
-        fetch(`https://kid-server.onrender.com/user_lendings/${uid}`)
+        fetch(`https://amazon-reader.onrender.com/user_lendings/${uid}`)
         .then(res=>res.json())
         .then(data=>setLendings(data))
     },[])
