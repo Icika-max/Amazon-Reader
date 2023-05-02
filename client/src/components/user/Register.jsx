@@ -42,7 +42,7 @@ const Register = () => {
     e.preventDefault();
     setError("");
     setIsRegistering(true);
-    fetch("https://kid-server.onrender.com/users", {
+    fetch("https://amazon-reader.onrender.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

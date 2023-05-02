@@ -15,7 +15,7 @@ const LibraryBooks = () => {
 
   const handleAddToCart = async (id, price) => {
     try {
-      const response = await fetch('https://kid-server.onrender.com/carts', {
+      const response = await fetch('https://amazon-reader.onrender.com/carts', {
         method: 'POST',
         body: JSON.stringify({
           quantity: 1,

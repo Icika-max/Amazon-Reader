@@ -49,43 +49,27 @@
   
   .lending-table th,
   .lending-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+    border: 2px solid #ccc;
   }
   
   .lending-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    color: #444;
+    background-color: #333;
+    color: #fff;
   }
   
   .lending-table td button {
-    margin-right: 10px;
-    padding: 6px 10px;
-    font-size: 16px;
-    line-height: 1.5;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    margin-right: 0.5rem;
   }
   
-  .lending-table td button.delete {
-    background-color: #ff4d4f;
-    color: #fff;
-  }
-  
-  .lending-table td button.delete:hover {
-    background-color: #d93636;
-  }
-  
-  .lending-table td button.edit {
-    background-color: #1890ff;
-    color: #fff;
-  }
-  
-  .lending-table td button.edit:hover {
-    background-color: #096dd9;
+  .lending-table td button:last-child {
+    margin-right: 0;
   }
   
   .page-numbers {
@@ -111,5 +95,12 @@
   
   .page-numbers button:hover {
     background-color: #f2f2f2;
+  }
+  
+  /* Style the active page number */
+  .page-numbers button.active {
+    background-color: #103a5a;
+    color: #fff;
+    border-color: #103a5a;
   }
   

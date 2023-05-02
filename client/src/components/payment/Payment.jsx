@@ -8,7 +8,7 @@ function Payment() {
     const [orders, setOrders] = useState([])
 
     useEffect(() =>{
-        fetch('https://kid-server.onrender.com/carts')
+        fetch('https://amazon-reader.onrender.com/carts')
         .then(res=>res.json())
         .then(data=>setOrders(data))
     }, [])
@@ -16,7 +16,7 @@ function Payment() {
     const handlePurchase = () => {
         orders.map((order) => {
             if (order.price > 0) {
-                fetch('https://kid-server.onrender.com/orders', {
+                fetch('https://amazon-reader.onrender.com/orders', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -35,7 +35,7 @@ function Payment() {
                 .then(data=>console.log(data))
                 .catch(error=>console.log(error))
             } else {
-                fetch('https://kid-server.onrender.com/lendings', {
+                fetch('https://amazon-reader.onrender.com/lendings', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -54,7 +54,7 @@ function Payment() {
                 .catch(error=>console.log(error))
             }
            
-        fetch(`https://kid-server.onrender.com/carts/${order.id}`, {
+        fetch(`https://amazon-reader.onrender.com/carts/${order.id}`, {
             method: 'DELETE'
         })
         .then(res => {
